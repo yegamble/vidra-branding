@@ -11,7 +11,7 @@ again.
 ```html
 <p align="center">
   <img src="https://raw.githubusercontent.com/yegamble/vidra-branding/main/assets/readme/banner.svg"
-       alt="Vidra — a federated video platform you install yourself" width="100%">
+       alt="Vidra — run your own video platform" width="100%">
 </p>
 ```
 

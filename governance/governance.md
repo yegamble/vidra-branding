@@ -30,9 +30,9 @@ undecided.
 |------|----------|--------|
 | 2026-08 | **Cyan outside the product, indigo inside it** — brand leads with the mark's cyan; the app keeps verified systemIndigo. Handoff at the sign-in screen. | **Decided** |
 | 2026-08 | Tri-protocol ribbon: exactly three placements, product-owned | **Decided** |
-| — | Drawn logotype (wordmark is currently system type) | Open |
-| — | Single-colour / reversed mark for engraving, embroidery, forced-colour contexts | Open |
-| — | Positioning line (three drafts in [guidelines §06](../guidelines/brand-guidelines.md#06--messaging)) | Open |
+| 2026-08 | **Logotype v1 drawn** — "Vidra" as fixed outlines from Inter Display Bold (SIL OFL) at −0.045em, kerned. Drawn form for logo placements; live system-face text remains for UI/inline use. | **Decided** |
+| 2026-08 | **Positioning line: "Run your own video platform."** — shortest true sentence, leads on ownership. The other two drafts become supporting lines ([guidelines §06](../guidelines/brand-guidelines.md#06--messaging)). | **Decided** |
+| — | Single-colour / reversed **mark** for engraving, embroidery, forced-colour contexts (the logotype is already single-colour) | Open |
 | — | Photography / illustration library (interim rule: real product imagery only) | Open |
 
 ## Using the marks

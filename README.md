@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme/banner.svg" alt="Vidra — a federated video platform you install yourself" width="100%">
+  <img src="assets/readme/banner.svg" alt="Vidra — run your own video platform" width="100%">
 </p>
 
 # vidra-branding
@@ -33,7 +33,7 @@ banner fix here propagates everywhere:
 ```html
 <p align="center">
   <img src="https://raw.githubusercontent.com/yegamble/vidra-branding/main/assets/readme/banner.svg"
-       alt="Vidra — a federated video platform you install yourself" width="100%">
+       alt="Vidra — run your own video platform" width="100%">
 </p>
 ```
 

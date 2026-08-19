@@ -20,9 +20,13 @@ and is **never redrawn, recoloured, outlined, rotated or set inside another shap
 
 ## 02 — Lockups
 
-The wordmark is type, not a drawing. No logotype has been drawn; until one exists,
-"Vidra" is set in the system face at **700 weight, −0.045em tracking**. That is
-deliberate — and a gap worth closing.
+**The logotype is drawn** ([`vidra-logotype.svg`](../assets/logo/vidra-logotype.svg),
+v1 · 2026-08): "Vidra" as fixed vector outlines derived from Inter Display Bold
+(SIL OFL — SF-adjacent proportions, legally redistributable, unlike SF Pro) at the
+brand's **−0.045em tracking**, shaped with real kerning. It renders identically on
+every platform, in print, and in forced-colour contexts. Use the drawn logotype for
+**logo placements** (lockups, banners, headers, decks); inline and UI text still sets
+"Vidra" live in the system face at 700 / −0.045em.
 
 - **Horizontal** (default): gap equals a third of the mark's width —
   [`vidra-lockup-horizontal.svg`](../assets/logo/vidra-lockup-horizontal.svg)
@@ -109,14 +113,18 @@ mechanism) · **Confident** (no hedging, no "simply", no apologising for complex
 
 ## 06 — Messaging
 
-**No positioning line has been chosen yet.** Three drafts, built from the repository's
-own description — pick one and it becomes the line everywhere:
+**The line (chosen 2026-08): "Run your own video platform."** It is the shortest true
+sentence — the voice's own first principle — and leads on ownership, the reason people
+self-host at all. It appears in the banner, site heroes, social bios and meta
+descriptions, always with the full stop.
 
-1. **Run your own video platform.** — shortest, leads on ownership.
-2. **One small server. A million viewers.** — leads on the hardest-to-match technical
-   claim; concrete enough to be checked.
-3. **Video hosting you own, at egress you can afford.** — names the cost problem out
-   loud; the most specific about who it is for.
+Two supporting lines back it up in longer formats (section heads, decks, docs intros);
+they support, they never replace the line:
+
+- **One small server. A million viewers.** — the hardest-to-match technical claim;
+  concrete enough to be checked.
+- **Video hosting you own, at egress you can afford.** — names the cost problem out
+  loud; the most specific about who it is for.
 
 **The paragraph.** Vidra is a federated video platform you install yourself, the way you
 would install WordPress. One low-cost server serves thousands or millions of viewers
@@ -162,6 +170,7 @@ this brand.
 
 ## Known gaps
 
-No drawn logotype, no single-colour or reversed mark, no photography library, no chosen
-positioning line. Each is a decision waiting to be made, not an oversight — tracked in
-the [governance decision log](../governance/governance.md#decision-log).
+No single-colour or reversed **mark** (the logotype is single-colour by nature; the
+otter is not), and no photography library. Each is a decision waiting to be made, not
+an oversight — tracked in the
+[governance decision log](../governance/governance.md#decision-log).

@@ -10,8 +10,10 @@ page, a README, a deck and the product itself recognisably belong to the same pr
 2. **The cyan family on Ink.** Vidra Cyan `#22BDE3` on Ink `#0C2136` is the brand's
    signature pairing — used for rules, dots, fills and large display type on every
    brand surface.
-3. **The system-face wordmark.** "Vidra" at 700 / −0.045em in the platform's own UI
-   face. The absence of a custom logotype is itself a statement: native, unthemed,
+3. **The drawn logotype.** "Vidra" as fixed vector outlines (v1, from Inter Display
+   Bold at 700 / −0.045em, kerned) for logo placements — identical on every platform
+   and in print. Inline and UI text still sets "Vidra" live in the system face at the
+   same weight and tracking, so the two forms read as one voice: native, unthemed,
    installed — like the software.
 4. **The colour boundary.** Cyan outside the product, systemIndigo inside it. The
    sign-in screen is the seam. Seeing indigo tells you that you are *in* the product;
@@ -55,6 +57,7 @@ operator's brand can lead without Vidra disappearing:
 | Asset | File | Use |
 |-------|------|-----|
 | Mark | [`assets/logo/vidra-icon.svg`](../assets/logo/vidra-icon.svg) | Favicon, app icon, avatars, anywhere |
+| Logotype (drawn, v1) | [`assets/logo/vidra-logotype.svg`](../assets/logo/vidra-logotype.svg) | Logo placements — banners, headers, decks, print |
 | Horizontal lockup | [`assets/logo/vidra-lockup-horizontal.svg`](../assets/logo/vidra-lockup-horizontal.svg) | Headers, docs, decks |
 | Stacked lockup | [`assets/logo/vidra-lockup-stacked.svg`](../assets/logo/vidra-lockup-stacked.svg) | Square placements, avatars |
 | README banner | [`assets/readme/banner.svg`](../assets/readme/banner.svg) | Repo README heroes |
