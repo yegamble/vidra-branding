@@ -1,0 +1,61 @@
+/* Vidra Design System — canonical semantic tokens.
+ * Source of truth in-product: vidra-user/app/globals.css. Spec: .ralph/specs/design-system.md.
+ * Every value is defined once with light-dark() and switches on color-scheme.
+ * Accent is systemIndigo; brand cyan (#22bde3) never becomes an interactive colour in the app. */
+
+:root {
+  color-scheme: light dark;
+  /* surfaces */
+  --canvas: light-dark(#f5f5f7, #0a0a0a);
+  --surface: light-dark(#ffffff, #1c1c1e);
+  --surface-muted: light-dark(#ebebed, #1f1f23);
+  --surface-strong: light-dark(#e1e1e3, #2b2b30);
+  --hairline: light-dark(#e8e8ea, #2b2b30);
+  --border: light-dark(#d4d4d8, #3f3f46);
+  /* foreground */
+  --fg: light-dark(#18181b, #f4f4f5);
+  --fg-muted: light-dark(#5f5f68, #a1a1aa);
+  --fg-subtle: light-dark(#a1a1aa, #71717a);
+  /* accent — systemIndigo */
+  --accent: light-dark(#5856d6, #5e5ce6);
+  --accent-text: light-dark(#4f4dcb, #8a87ff);
+  --accent-tint: light-dark(rgb(88 86 214 / .12), rgb(94 92 230 / .16));
+  /* semantic status */
+  --danger-text: light-dark(#d70015, #ff6961);
+  --danger-tint: light-dark(#fef2f2, rgb(255 105 97 / .14));
+  --danger-solid: #dc2626;
+  --success-text: light-dark(#0f5f27, #30d158);
+  --success-tint: light-dark(rgb(15 95 39 / .15), rgb(48 209 88 / .16));
+  --success-dot: #34c759;
+  --warning-text: light-dark(#6f4a00, #ffd60a);
+  --warning-tint: light-dark(rgb(111 74 0 / .15), rgb(255 214 10 / .14));
+  --warning-dot: #ff9500;
+  --live: #ff453a;
+  /* protocol identity — badges only */
+  --proto-ap: #6364ff;
+  --proto-bsky: #0085ff;
+  --proto-ipfs: #65c2cb;
+  --ribbon: linear-gradient(90deg, #6364ff, #0085ff, #65c2cb);
+  /* navigation-layer glass */
+  --chrome: light-dark(rgb(255 255 255 / .78), rgb(28 28 30 / .78));
+  --chrome-border: light-dark(rgb(24 24 27 / .09), rgb(244 244 245 / .12));
+  --chrome-shadow: light-dark(0 10px 35px rgb(24 24 27 / .09), 0 12px 40px rgb(0 0 0 / .35));
+  /* elevation */
+  --shadow-soft: 0 8px 30px rgb(0 0 0 / .06);
+  --shadow-soft-strong: 0 8px 30px rgb(0 0 0 / .10);
+  /* radii — concentric scale */
+  --r-btn: 10px; --r-input: 12px; --r-card: 16px; --r-dialog: 20px; --r-sheet: 22px; --r-full: 999px;
+  /* motion */
+  --dur-fill: 150ms; --dur-lift: 200ms; --dur-max: 300ms;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; background: var(--canvas); color: var(--fg); font-family: var(--font-sans); font-size: 15px; line-height: 1.45; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.label { font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--fg-muted); }
+.mono { font-family: var(--font-mono); }
+.muted { color: var(--fg-muted); }
+.note { font-size: 13px; line-height: 19px; color: var(--fg-muted); text-wrap: pretty; }
+.col { display: flex; flex-direction: column; }
+.row { display: flex; align-items: center; }
+@keyframes live-pulse { 0%, 100% { opacity: 1; } 50% { opacity: .4; } }

@@ -1,0 +1,167 @@
+# Vidra brand guidelines
+
+**v1 · August 2026.** Vidra is a video platform you install yourself. These are the rules
+for how it looks and speaks everywhere **outside the product interface**. (Inside the
+product, the [design system](../design-system/README.md) governs.)
+
+---
+
+## 01 — The mark
+
+One otter, four sizes, no variations. The mark is the only drawn asset the brand owns.
+It is supplied as vector ([`assets/logo/vidra-icon.svg`](../assets/logo/vidra-icon.svg))
+and is **never redrawn, recoloured, outlined, rotated or set inside another shape**.
+
+- **Clear space:** half the mark's height on every side.
+- **Minimum sizes:** 16px favicon · 24px minimum in UI · 40px minimum in print ·
+  64px comfortable.
+- **Approved backgrounds:** Paper `#F5F5F7` (preferred) · Ink `#0C2136` (preferred) ·
+  Ice `#CBF2F4` (permitted) · photography/media only behind a 45% Ink scrim.
+
+## 02 — Lockups
+
+The wordmark is type, not a drawing. No logotype has been drawn; until one exists,
+"Vidra" is set in the system face at **700 weight, −0.045em tracking**. That is
+deliberate — and a gap worth closing.
+
+- **Horizontal** (default): gap equals a third of the mark's width —
+  [`vidra-lockup-horizontal.svg`](../assets/logo/vidra-lockup-horizontal.svg)
+- **Stacked**: for square placements and avatars —
+  [`vidra-lockup-stacked.svg`](../assets/logo/vidra-lockup-stacked.svg)
+- **Mark alone**: only where "Vidra" is already on screen.
+
+**Instance lockup.** Anyone can run Vidra, so most real-world lockups belong to somebody
+else. The operator's name leads; Vidra follows in muted type at 13px ("powered by
+Vidra"). Never co-size the two — the platform is the smaller signature.
+
+## 03 — Colour
+
+**Cyan outside the product, indigo inside it.** The mark's cyan sits close to both
+Bluesky blue and IPFS teal, which the interface reserves for federation identity. Rather
+than fight that, the boundary is drawn at the edge of the app: the brand leads everywhere
+people read about Vidra; the product keeps the accent it ships and has verified.
+
+| Colour | Hex | Use |
+|--------|-----|-----|
+| **Vidra Cyan** | `#22BDE3` | The brand colour. Fills, rules, dots, large type on Ink. |
+| **Deep Cyan** | `#16A3E2` | Secondary fill. The mark's own shadow tone. |
+| **Action Cyan** | `#0B7EA3` | The only cyan that may sit under white text (4.5:1). |
+| **Ice** | `#CBF2F4` | Tints, quiet section grounds, chart fills. |
+| **Ink** | `#0C2136` | The dark ground. Headlines, full-bleed sections. |
+| **Slate** | `#1D466A` | Dividers and depth on Ink. Never body text on Paper. |
+| **Muted** | `#4C6478` | Secondary text on Paper. Clears AA. |
+| **Paper** | `#F5F5F7` | Shared with the product canvas — the one continuity. |
+
+| Surface | Leads with | Accent for actions |
+|---------|-----------|--------------------|
+| Marketing site | Ink + Vidra Cyan | Action Cyan |
+| Docs | Paper + Ink | Action Cyan |
+| Social, decks, print | Ink + Vidra Cyan | Vidra Cyan as fill only |
+| Transactional email | Paper + Ink | Action Cyan |
+| **The product interface** | Canvas + surfaces | **systemIndigo — unchanged** |
+
+Two rules keep the boundary clean: cyan never becomes an interactive colour inside the
+app, and indigo never appears on a brand surface. The handoff happens at the sign-in
+screen.
+
+## 04 — Typography
+
+One face, tighter as it gets bigger. The brand uses the same system stack as the product
+(SF Pro on Apple platforms, the native UI face elsewhere, Helvetica Neue fallback), so a
+marketing page and the app are set in the same face. Nothing is licensed, nothing
+downloads.
+
+| Level | Spec |
+|-------|------|
+| Hero | 64 / 64 · 700 · −0.05em |
+| Section head | 44 / 48 · 700 · −0.04em |
+| Standfirst | 22 / 31 · 400 — one or two lines under a headline, never three |
+| Body | 17 / 26 · 400 — 66-character measure |
+| Mono | 14 — commands, CIDs, stream keys |
+
+- **Sentence case, always** — headlines, buttons, nav, section labels. Title Case reads
+  like a press release; all caps is reserved for 11px micro-labels.
+- **Two weights** — regular for reading, bold for headings. Semibold exists for 13–15px
+  labels. Light and black are not part of the brand.
+
+## 05 — Voice
+
+Say the number, not the adjective. Vidra's audience installs software on servers — they
+can tell when a claim is measurable and when it is decoration. Write for the person
+reading the docs, not the person skimming the homepage.
+
+**Plain** (the shortest true sentence wins) · **Factual** (every claim has a number or a
+mechanism) · **Confident** (no hedging, no "simply", no apologising for complexity) ·
+**Precise** (use the real term: ActivityPub, egress, CID, instance).
+
+| Write this | Not this |
+|------------|----------|
+| Serve a million viewers from one small server. | Unleash the power of decentralised video at scale. |
+| Egress stays flat because peers carry the bytes. | Revolutionary bandwidth savings you have to see to believe. |
+| Federation is on by default. Turn it off per channel. | Seamlessly connect with the wider fediverse ecosystem. |
+| Install it yourself. It is AGPL v3. | Join a movement that is putting creators back in control. |
+| Upload failed: the file is 4.2 GB and this instance allows 2 GB. | Oops! Something went wrong. Please try again later. |
+
+- **No emoji.** Not in the product (CI-enforced), not in the docs, not on social. Icons
+  are drawn glyphs.
+- **You, not we.** The reader runs the instance: "you install", "your instance", "your
+  viewers". Vidra is the thing, not the protagonist.
+
+## 06 — Messaging
+
+**No positioning line has been chosen yet.** Three drafts, built from the repository's
+own description — pick one and it becomes the line everywhere:
+
+1. **Run your own video platform.** — shortest, leads on ownership.
+2. **One small server. A million viewers.** — leads on the hardest-to-match technical
+   claim; concrete enough to be checked.
+3. **Video hosting you own, at egress you can afford.** — names the cost problem out
+   loud; the most specific about who it is for.
+
+**The paragraph.** Vidra is a federated video platform you install yourself, the way you
+would install WordPress. One low-cost server serves thousands or millions of viewers
+because egress is distributed rather than paid for. It federates over ActivityPub and
+ATProto, stores media on IPFS if you want it to, and it is free software under AGPL v3.
+
+**Three proof points.** Low egress at scale (peers and IPFS carry distribution) ·
+Federated by default (ActivityPub and ATProto per channel, not bolted on) · Yours to run
+(AGPL v3, one compose file, no vendor between you and your viewers).
+
+**What Vidra is not:** not a hosted service, not a creator monetisation platform, and
+not a PeerTube fork — it is a clean-room implementation. Say so plainly when asked.
+
+## 07 — Imagery & layout
+
+Show the product, or show nothing. No photography or illustration library exists; until
+it does, the only sanctioned imagery is the interface itself: real screens, real
+thumbnails, real terminal output. Stock photography of people at laptops is not part of
+this brand.
+
+- **Screens** sit on Ink or Paper with a 16px radius and no drop shadow. Crop to the
+  region that proves the point; never show full browser chrome.
+- **Video stills** from real videos on real instances, credited. Cool-toned and
+  un-graded; no filters, no vignette, no cyan wash.
+- **Grid**: 12 columns; 1080px max measure for text, 1280 for media; section padding
+  96px desktop / 48 mobile.
+- **Rhythm**: long scroll, alternating Ink and Paper sections — never two Ink sections
+  in a row.
+- **Whitespace**: if a section feels empty, cut a sentence rather than adding a card.
+
+## 08 — Misuse
+
+- Don't recolour the mark. It has six colours and they are all fixed; no single-colour
+  version exists yet.
+- Don't put the mark in a circle, rounded square or badge — it has its own silhouette.
+- Don't set cyan type on Paper below 20px. Use Action Cyan, or Ink.
+- Don't gradient anything. The tri-protocol ribbon is the only gradient the brand owns,
+  and it belongs to the product.
+- Don't add an otter illustration, mascot pose or animal metaphor to the copy. The mark
+  carries it; the words do not need to.
+- Don't use indigo on a brand surface, or cyan as a button colour inside the app. That
+  boundary is the whole colour system.
+
+## Known gaps
+
+No drawn logotype, no single-colour or reversed mark, no photography library, no chosen
+positioning line. Each is a decision waiting to be made, not an oversight — tracked in
+the [governance decision log](../governance/governance.md#decision-log).

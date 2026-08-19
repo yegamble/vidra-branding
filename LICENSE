@@ -1,0 +1,15 @@
+Vidra branding repository — licensing
+
+Documentation, guidelines, templates and snippets in this repository are licensed
+under the Creative Commons Attribution-ShareAlike 4.0 International licence
+(CC BY-SA 4.0): https://creativecommons.org/licenses/by-sa/4.0/
+
+Excluded from that grant: the Vidra name, the "Vidra" wordmark, and the otter mark
+(assets/logo/*). These identify the Vidra project. They may be used unmodified to
+refer to, credit, or link to Vidra (including the "powered by Vidra" instance
+lockup) in accordance with guidelines/brand-guidelines.md and
+governance/governance.md, but may not be used to brand a fork or derivative
+service, or in any way that implies official status or endorsement.
+
+The Vidra software itself is separately licensed under AGPL v3 in its own
+repositories (vidra-core, vidra-user, vidra-search).
