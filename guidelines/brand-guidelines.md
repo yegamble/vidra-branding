@@ -1,10 +1,28 @@
 # Vidra brand guidelines
 
-**v1 · August 2026.** Vidra is a video platform you install yourself. These are the rules
+**v1.1 · August 2026.** Vidra is a video platform you install yourself. These are the rules
 for how it looks and speaks everywhere **outside the product interface**. (Inside the
 product, the [design system](../design-system/README.md) governs.)
 
+*New in v1.1: a Foundation section (§00), Mist `#EEF7FB` in the palette, an explicit
+spacing scale in §07, an Accessibility section (§09), and an interactive edition of this
+document at [`portal/index.html`](../portal/index.html).*
+
 ---
+
+## 00 — Foundation
+
+**Mission.** Video hosting anyone can own. One small server holds the origin; distribution
+is offloaded to the people watching, to a CDN, or to IPFS — so the cost of an audience does
+not scale with the size of it.
+
+**Personality.** Plain, precise, confident. Vidra says the number, not the adjective, and
+uses the real term: ActivityPub, egress, CID, instance.
+
+**Promise.** No vendor between you and your viewers. AGPL v3, federation on by default,
+one compose file, and an egress bill that stays flat as the audience grows.
+
+Everything below is a rule; this section is the reason the rules exist.
 
 ## 01 — The mark
 
@@ -51,10 +69,15 @@ people read about Vidra; the product keeps the accent it ships and has verified.
 | **Deep Cyan** | `#16A3E2` | Secondary fill. The mark's own shadow tone. |
 | **Action Cyan** | `#0B7EA3` | The only cyan that may sit under white text (4.5:1). |
 | **Ice** | `#CBF2F4` | Tints, quiet section grounds, chart fills. |
+| **Mist** | `#EEF7FB` | Quiet tint surface for cards and section grounds on Paper. |
 | **Ink** | `#0C2136` | The dark ground. Headlines, full-bleed sections. |
 | **Slate** | `#1D466A` | Dividers and depth on Ink. Never body text on Paper. |
 | **Muted** | `#4C6478` | Secondary text on Paper. Clears AA. |
 | **Paper** | `#F5F5F7` | Shared with the product canvas — the one continuity. |
+
+Two tints, two jobs: **Ice** is the saturated one (charts, brand moments, type on Ink);
+**Mist** is the quiet one (documentation cards, marketing section grounds on Paper, where
+Ice would announce itself).
 
 | Surface | Leads with | Accent for actions |
 |---------|-----------|--------------------|
@@ -151,6 +174,8 @@ this brand.
   un-graded; no filters, no vignette, no cyan wash.
 - **Grid**: 12 columns; 1080px max measure for text, 1280 for media; section padding
   96px desktop / 48 mobile.
+- **Spacing**: a 4px base unit. Every gap, pad and offset on a brand surface is a multiple
+  of it — 4 · 8 · 12 · 16 · 24 · 32 · 48 · 96 — and card corners take the 16px radius.
 - **Rhythm**: long scroll, alternating Ink and Paper sections — never two Ink sections
   in a row.
 - **Whitespace**: if a section feels empty, cut a sentence rather than adding a card.
@@ -168,9 +193,31 @@ this brand.
 - Don't use indigo on a brand surface, or cyan as a button colour inside the app. That
   boundary is the whole colour system.
 
+## 09 — Accessibility
+
+Brand surfaces are held to the product's bar. Inside the product, WCAG 2.2 AA is enforced
+in CI — axe serious and critical findings block the build — and everything outside the
+product is checked against the same numbers at review.
+
+- **Contrast.** Body text clears 4.5:1; large type and UI edges clear 3:1. Action Cyan
+  `#0B7EA3` is the only cyan permitted under white text; Vidra Cyan and Deep Cyan are
+  fills and large type only. Small cyan type on Paper darkens to `#0A6B8C`.
+- **Focus.** Every interactive element shows a visible 2px focus ring with a 2px offset:
+  Action Cyan on Paper, Ice on Ink. Removing the ring, or replacing it with a colour
+  change alone, is a defect.
+- **Motion.** Transitions run 150ms for fills and 200ms for lifts and never exceed 300ms.
+  Everything honours `prefers-reduced-motion`, including scroll behaviour.
+- **Never colour alone.** A state carries a glyph or a word as well as a colour. The
+  do/don't badges in the interactive edition are drawn check and cross vectors, not
+  colour swaps and not dingbat characters.
+
 ## Known gaps
 
 No single-colour or reversed **mark** (the logotype is single-colour by nature; the
 otter is not), and no photography library. Each is a decision waiting to be made, not
 an oversight — tracked in the
 [governance decision log](../governance/governance.md#decision-log).
+
+These guidelines now also ship as an interactive document —
+[`portal/index.html`](../portal/index.html), which replaced the old download portal in
+v1.1. The markdown here stays canonical; the page renders it.

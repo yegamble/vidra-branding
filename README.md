@@ -14,7 +14,7 @@ Vidra* lives here: the rules, the reusable pieces, and the approved assets.
 | **Design system** | [`design-system/`](design-system/README.md) | The reusable implementation layer for the product UI: tokens, components, accessibility contract |
 | **Brand identity system** | [`identity/identity-system.md`](identity/identity-system.md) | The complete visual language — what makes everything recognisably Vidra |
 | **Brand governance** | [`governance/governance.md`](governance/governance.md) | How changes are proposed, reviewed and approved; the decision log; usage by instance operators |
-| **Brand portal** | [`portal/index.html`](portal/index.html) | One page to grab approved logos, colours, snippets and guidelines |
+| **Interactive guidelines** | [`portal/index.html`](portal/index.html) | The guidelines as a page: specimens, do/don't tiles, live samples, and the asset downloads |
 
 ## The one rule to know
 
@@ -51,7 +51,7 @@ a reference copy in [`design-system/tokens.css`](design-system/tokens.css).
 ```
 assets/       logo/ (icon, lockups) · readme/ (banner, powered-by badge)
 guidelines/   brand-guidelines.md
-design-system/  README.md · tokens.css
+design-system/  README.md · tokens.css (product) · brand-tokens.css (brand surfaces)
 identity/     identity-system.md
 governance/   governance.md
 portal/       index.html

@@ -1,0 +1,82 @@
+/* Vidra brand tokens — brand surfaces only.
+ * Marketing pages, documentation sites, decks, README art, transactional email.
+ * The product interface does NOT read this file: it ships tokens.css with the
+ * systemIndigo accent, and the two never mix — cyan never becomes an interactive
+ * colour in the app, indigo never appears on a brand surface.
+ * Rules: ../guidelines/brand-guidelines.md (v1.1). Rendered: ../portal/index.html. */
+
+:root {
+  /* palette — guidelines §03 */
+  --brand-cyan: #22BDE3;         /* the brand colour; fills, rules, large type on Ink */
+  --brand-cyan-deep: #16A3E2;    /* secondary fill; the mark's own shadow tone */
+  --brand-cyan-action: #0B7EA3;  /* the only cyan under white text — 4.6:1 */
+  --brand-ice: #CBF2F4;          /* saturated tint — charts, brand moments */
+  --brand-mist: #EEF7FB;         /* quiet tint — cards and section grounds on Paper */
+  --brand-ink: #0C2136;
+  --brand-slate: #1D466A;        /* dividers and depth on Ink; never body text on Paper */
+  --brand-muted: #4C6478;        /* secondary text on Paper — 5.7:1 */
+  --brand-paper: #F5F5F7;        /* shared with the product canvas */
+
+  /* text tints, each measured against its ground — guidelines §09 */
+  --brand-cyan-action-text: #0A6B8C; /* small cyan type on Paper — 5.5:1 */
+  --brand-label: #5C7285;            /* 11–13px labels on Paper — 4.6:1 */
+  --brand-on-ink: #E6F6FA;           /* body text on Ink — 14.7:1 */
+  --brand-on-ink-2: #8FB4C9;         /* secondary text on Ink — 7.4:1 */
+  --brand-hairline: #E2E6E9;         /* hairline on Paper */
+  --brand-hairline-ink: rgb(29 70 106 / .90);
+
+  /* type — the system stack, same as the product; nothing licensed, nothing downloads */
+  --brand-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --brand-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* scale — guidelines §04 */
+  --brand-size-hero: 64px;       --brand-lh-hero: 64px;       --brand-track-hero: -.05em;
+  --brand-size-section: 44px;    --brand-lh-section: 48px;    --brand-track-section: -.04em;
+  --brand-size-standfirst: 22px; --brand-lh-standfirst: 31px;
+  --brand-size-body: 17px;       --brand-lh-body: 26px;
+  --brand-size-mono: 14px;
+  --brand-track-wordmark: -.045em; /* live "Vidra" in inline and UI text, 700 */
+
+  /* spacing — 4px base, guidelines §07 */
+  --brand-space-1: 4px;
+  --brand-space-2: 8px;
+  --brand-space-3: 12px;
+  --brand-space-4: 16px;
+  --brand-space-6: 24px;
+  --brand-space-8: 32px;
+  --brand-space-12: 48px;
+  --brand-space-24: 96px;
+
+  /* layout — guidelines §07 */
+  --brand-section-pad: 96px;
+  --brand-section-pad-mobile: 48px;
+  --brand-measure-text: 1080px;
+  --brand-measure-media: 1280px;
+  --brand-columns: 12;
+
+  /* radii — concentric, matching the product's scale */
+  --brand-r-btn: 10px;
+  --brand-r-input: 12px;
+  --brand-r-card: 16px;
+  --brand-r-dialog: 20px;
+  --brand-r-sheet: 22px;
+  --brand-r-pill: 999px;
+
+  /* motion — guidelines §09; never longer than --brand-dur-max */
+  --brand-dur-fill: 150ms;
+  --brand-dur-lift: 200ms;
+  --brand-dur-max: 300ms;
+  --brand-ease: cubic-bezier(.32, .72, 0, 1);
+
+  /* focus — 2px ring, 2px offset, on every interactive element */
+  --brand-focus-paper: var(--brand-cyan-action);
+  --brand-focus-ink: var(--brand-ice);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --brand-dur-fill: 1ms;
+    --brand-dur-lift: 1ms;
+    --brand-dur-max: 1ms;
+  }
+}

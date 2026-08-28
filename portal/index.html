@@ -3,105 +3,1392 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vidra Brand Center</title>
+<meta name="description" content="Vidra brand guidelines v1.1 — the mark, lockups, colour, typography, voice, messaging, imagery, misuse and accessibility rules for every surface outside the product interface.">
+<title>Vidra brand guidelines</title>
+<link rel="icon" href="../assets/logo/vidra-icon.svg">
 <style>
-  :root { --cyan:#22bde3; --deep:#16a3e2; --action:#0b7ea3; --ice:#cbf2f4; --ink:#0c2136; --slate:#1d466a; --muted:#4c6478; --paper:#f5f5f7; --line:#e2e6e9; }
-  * { box-sizing:border-box; }
-  body { margin:0; background:var(--paper); color:var(--ink); font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; -webkit-font-smoothing:antialiased; }
-  a { color:var(--action); text-decoration:none; }
-  a:hover { color:var(--ink); }
-  .hero { background:var(--ink); padding:64px 40px 52px; }
-  .hero .in { max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:22px; }
-  .hero h1 { margin:0; font-size:44px; line-height:48px; font-weight:700; letter-spacing:-0.04em; color:#ffffff; }
-  .hero p { margin:0; font-size:17px; line-height:26px; color:#8fb4c9; max-width:640px; }
-  .rule { height:3px; width:220px; border-radius:2px; background:var(--cyan); }
-  main { max-width:980px; margin:0 auto; padding:40px 40px 100px; display:flex; flex-direction:column; gap:20px; }
-  section { background:#ffffff; border:1px solid var(--line); border-radius:16px; padding:28px 32px; display:flex; flex-direction:column; gap:18px; }
-  h2 { margin:0; font-size:22px; line-height:28px; letter-spacing:-0.02em; }
-  .kicker { font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--action); }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:14px; }
-  .sw { display:flex; flex-direction:column; gap:7px; font-size:13px; }
-  .sw i { display:block; height:72px; border-radius:12px; }
-  .sw code { font-family:ui-monospace, 'SF Mono', Menlo, monospace; font-size:11.5px; color:var(--muted); }
-  .dl { display:flex; flex-wrap:wrap; gap:12px; }
-  .dl a { display:flex; flex-direction:column; gap:9px; border:1px solid var(--line); border-radius:12px; padding:16px; width:200px; color:var(--ink); }
-  .dl a:hover { border-color:var(--muted); }
-  .dl .thumb { background:var(--paper); border-radius:8px; height:84px; display:flex; align-items:center; justify-content:center; }
-  .dl .thumb.dark { background:var(--ink); }
-  .dl b { font-size:14px; }
-  .dl span { font-size:12px; color:var(--muted); }
-  pre { margin:0; background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:14px 16px; font-family:ui-monospace, 'SF Mono', Menlo, monospace; font-size:12px; line-height:18px; overflow-x:auto; color:var(--muted); }
-  .links { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-  .links a { border:1px solid var(--line); border-radius:12px; padding:16px 18px; display:flex; flex-direction:column; gap:5px; color:var(--ink); }
-  .links a:hover { border-color:var(--muted); }
-  .links b { font-size:15px; }
-  .links span { font-size:13px; color:var(--muted); line-height:19px; }
-  footer { max-width:980px; margin:0 auto; padding:0 40px 60px; font-size:13px; color:var(--muted); }
+/* ------------------------------------------------------------------
+   Vidra brand guidelines — interactive document, v1.1
+   Brand surfaces only. No webfonts, no external requests, no build step.
+   Every value here is a brand token; the product's tokens live in
+   ../design-system/tokens.css and are never mixed with these.
+   ------------------------------------------------------------------ */
+:root {
+  color-scheme: only light;
+
+  /* palette */
+  --cyan:#22BDE3;        /* Vidra Cyan — fills, rules, large type on Ink */
+  --deep:#16A3E2;        /* Deep Cyan — secondary fill */
+  --action:#0B7EA3;      /* Action Cyan — the only cyan under white text */
+  --action-text:#0A6B8C; /* Action Cyan, darkened for small type on Paper */
+  --ice:#CBF2F4;
+  --mist:#EEF7FB;        /* quiet tint surface (v1.1) */
+  --ink:#0C2136;
+  --slate:#1D466A;
+  --muted:#4C6478;
+  --paper:#F5F5F7;
+  --white:#FFFFFF;
+
+  /* text tints, all measured against their ground */
+  --label:#5C7285;       /* smallest labels on Paper — 4.6:1 */
+  --on-ink:#E6F6FA;      /* body on Ink — 14.7:1 */
+  --on-ink-2:#8FB4C9;    /* secondary on Ink — 7.4:1 */
+
+  /* lines and grounds */
+  --line:#E2E6E9;
+  --line-ink:rgb(29 70 106 / .90);
+  --card-ink:rgb(29 70 106 / .32);
+
+  /* spacing scale — 4px base */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px; --s12:48px; --s24:96px;
+
+  /* radii — concentric */
+  --r-btn:10px; --r-input:12px; --r-card:16px; --r-dialog:20px; --r-sheet:22px; --r-pill:999px;
+
+  /* motion */
+  --t-fill:150ms; --t-lift:200ms; --ease:cubic-bezier(.32,.72,0,1);
+
+  --sans:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --mono:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --rail:248px;
+}
+
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:26px;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+img { display:block; max-width:100%; }
+p { margin:0; text-wrap:pretty; }
+h1,h2,h3,h4 { margin:0; font-weight:700; }
+ul { margin:0; padding:0; list-style:none; }
+a { color:var(--action-text); text-decoration:none; transition:color var(--t-fill) var(--ease); }
+a:hover { color:var(--ink); }
+
+/* focus — 2px ring, Action Cyan on Paper, Ice on Ink */
+:focus-visible { outline:2px solid var(--action); outline-offset:2px; border-radius:var(--r-btn); }
+.ink :focus-visible, .hero :focus-visible, footer :focus-visible { outline-color:var(--ice); }
+
+.skip {
+  position:absolute; left:-9999px; top:0; z-index:80;
+  background:var(--ink); color:var(--white); padding:12px 18px; border-radius:0 0 var(--r-btn) 0;
+  font-size:14px; font-weight:600;
+}
+.skip:focus { left:0; color:var(--white); }
+
+/* ---------- type scale ---------- */
+.h1 { font-size:clamp(40px, 6.4vw, 64px); line-height:1.02; letter-spacing:-.05em; }
+h2, .h2 { font-size:clamp(30px, 4vw, 44px); line-height:1.09; letter-spacing:-.04em; }
+h3, .h3 { font-size:20px; line-height:27px; letter-spacing:-.02em; }
+h4, .h4 { font-size:15px; line-height:22px; letter-spacing:-.01em; font-weight:600; }
+.lede { font-size:22px; line-height:31px; color:var(--muted); max-width:720px; }
+.ink .lede { color:var(--on-ink); }
+.body-2 { font-size:15px; line-height:23px; color:var(--muted); }
+.ink .body-2 { color:var(--on-ink-2); }
+.small { font-size:13.5px; line-height:20px; color:var(--label); }
+.ink .small { color:var(--on-ink-2); }
+.mono { font-family:var(--mono); font-size:14px; }
+.kicker {
+  font-family:var(--mono); font-size:11px; line-height:16px; font-weight:700;
+  letter-spacing:.18em; text-transform:uppercase; color:var(--action-text);
+}
+.ink .kicker, .hero .kicker { color:var(--cyan); }
+.caption {
+  font-family:var(--mono); font-size:11px; line-height:16px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--label);
+}
+.ink .caption { color:var(--on-ink-2); }
+
+/* ---------- top bar ---------- */
+.topbar {
+  position:sticky; top:0; z-index:50;
+  background:var(--paper); border-bottom:1px solid var(--line);
+}
+.topbar .in { display:flex; align-items:center; gap:var(--s4); height:64px; padding:0 var(--s8); }
+.topbar .lockup { height:28px; width:auto; }
+.topbar .sep { width:1px; height:20px; background:var(--line); }
+.chip {
+  margin-left:auto; font-family:var(--mono); font-size:11.5px; letter-spacing:.08em;
+  color:var(--action-text); background:var(--white);
+  border:1px solid var(--line); border-radius:var(--r-pill); padding:5px 12px;
+}
+
+/* ---------- hero ---------- */
+.hero { position:relative; overflow:hidden; background:var(--ink); padding:var(--s24) var(--s8) 104px; }
+.hero::before, .hero::after { content:""; position:absolute; border-radius:var(--r-pill); pointer-events:none; }
+.hero::before {
+  width:760px; height:760px; top:-360px; right:-160px;
+  background:radial-gradient(circle, rgb(34 189 227 / .26), rgb(34 189 227 / 0) 62%);
+}
+.hero::after {
+  width:620px; height:620px; bottom:-380px; left:-180px;
+  background:radial-gradient(circle, rgb(22 163 226 / .20), rgb(22 163 226 / 0) 64%);
+}
+.hero .in {
+  position:relative; z-index:1; max-width:1180px; margin:0 auto;
+  display:grid; grid-template-columns:minmax(0,1fr) 288px; gap:64px; align-items:center;
+}
+.hero h1 { color:var(--white); max-width:14ch; }
+.hero .lede { color:var(--on-ink); max-width:600px; }
+.hero .rule { height:3px; width:200px; border-radius:2px; background:var(--cyan); }
+.hero-copy { display:flex; flex-direction:column; gap:var(--s6); }
+.cta-row { display:flex; flex-wrap:wrap; gap:var(--s3); padding-top:var(--s2); }
+.mark-tile {
+  aspect-ratio:1; border-radius:var(--r-sheet);
+  background:rgb(203 242 244 / .06); border:1px solid var(--line-ink);
+  display:grid; place-items:center; gap:var(--s4);
+  transition:border-color var(--t-lift) var(--ease), background var(--t-lift) var(--ease);
+}
+.mark-tile:hover { border-color:var(--cyan); background:rgb(203 242 244 / .09); }
+
+/* ---------- buttons ---------- */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:var(--s2);
+  min-height:46px; padding:0 22px; border-radius:var(--r-pill);
+  font-family:inherit; font-size:15px; font-weight:600; letter-spacing:-.01em;
+  border:1px solid transparent; cursor:pointer;
+  transition:background var(--t-fill) var(--ease), color var(--t-fill) var(--ease),
+             border-color var(--t-fill) var(--ease), transform var(--t-lift) var(--ease);
+}
+.btn:hover { transform:translateY(-1px); }
+.btn-fill { background:var(--cyan); color:var(--ink); }
+.btn-fill:hover { background:var(--deep); color:var(--ink); }
+.btn-ghost { border-color:var(--slate); color:var(--on-ink); }
+.btn-ghost:hover { border-color:var(--cyan); color:var(--white); background:rgb(34 189 227 / .10); }
+.btn-action { background:var(--action); color:var(--white); }
+.btn-action:hover { background:var(--ink); color:var(--white); }
+.btn-quiet { border-color:var(--line); color:var(--ink); background:var(--white); }
+.btn-quiet:hover { border-color:var(--action); color:var(--action-text); }
+
+/* ---------- shell + contents nav ---------- */
+.shell { display:block; }
+.toc { display:none; }
+main { min-width:0; }
+
+@media (min-width:1024px) {
+  .shell { display:grid; grid-template-columns:var(--rail) minmax(0,1fr); }
+  .toc { display:block; position:relative; }
+  .toc-inner { position:sticky; top:88px; z-index:5; padding:var(--s24) 0 var(--s12) var(--s8); }
+  .shell .band { margin-left:calc(var(--rail) * -1); padding-left:calc(var(--rail) + var(--s12)); padding-right:var(--s12); }
+  .hero, body > footer { padding-left:calc(var(--rail) + var(--s12)); padding-right:var(--s12); }
+  .hero .in { max-width:1080px; }
+}
+.toc .caption { padding:0 12px var(--s3); }
+.toc a {
+  display:flex; align-items:baseline; gap:10px; padding:7px 12px;
+  border-radius:var(--r-pill); font-size:13.5px; line-height:20px; color:var(--label);
+  transition:color var(--t-fill) var(--ease), background var(--t-fill) var(--ease);
+}
+.toc a .n { font-family:var(--mono); font-size:11px; letter-spacing:.04em; }
+.toc a:hover { color:var(--ink); background:rgb(76 100 120 / .09); }
+.toc a[aria-current="true"] { background:var(--ink); color:var(--white); }
+.toc[data-ground="ink"] .caption { color:var(--on-ink-2); }
+.toc[data-ground="ink"] a { color:var(--on-ink-2); }
+.toc[data-ground="ink"] a:hover { color:var(--on-ink); background:rgb(203 242 244 / .10); }
+.toc[data-ground="ink"] a[aria-current="true"] { background:var(--ice); color:var(--ink); }
+
+/* ---------- section bands ---------- */
+.band { padding:var(--s24) var(--s8); scroll-margin-top:72px; }
+.band.paper { background:var(--paper); color:var(--ink); }
+.band.ink { background:var(--ink); color:var(--on-ink); }
+.band > .wrap { max-width:1080px; margin-inline:auto; display:flex; flex-direction:column; gap:var(--s12); }
+.sec-head { display:grid; grid-template-columns:72px minmax(0,1fr); gap:var(--s6); border-top:1px solid var(--line); padding-top:var(--s6); }
+.ink .sec-head { border-top-color:var(--line-ink); }
+.sec-num { font-family:var(--mono); font-size:13px; letter-spacing:.06em; color:var(--action-text); padding-top:10px; }
+.ink .sec-num { color:var(--cyan); }
+.sec-title { display:flex; flex-direction:column; gap:var(--s4); }
+.ink h2, .ink h3 { color:var(--white); }
+.block { display:flex; flex-direction:column; gap:var(--s6); }
+
+/* ---------- grids ---------- */
+.g2 { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:var(--s6); }
+.g3 { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:var(--s6); }
+.g4 { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:var(--s4); }
+.g-auto { display:grid; grid-template-columns:repeat(auto-fill, minmax(210px,1fr)); gap:var(--s4); }
+
+/* ---------- cards ---------- */
+.card {
+  background:var(--white); border:1px solid var(--line); border-radius:var(--r-card);
+  padding:var(--s6); display:flex; flex-direction:column; gap:var(--s3);
+  transition:border-color var(--t-lift) var(--ease), transform var(--t-lift) var(--ease);
+}
+.card.tint { background:var(--mist); border-color:rgb(11 126 163 / .14); }
+.ink .card { background:var(--card-ink); border-color:var(--line-ink); }
+.card .num { font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--action-text); }
+.ink .card .num { color:var(--cyan); }
+.callout {
+  border-left:3px solid var(--cyan); background:var(--mist);
+  border-radius:0 var(--r-card) var(--r-card) 0; padding:var(--s6) var(--s8);
+  display:flex; flex-direction:column; gap:var(--s2);
+}
+.ink .callout { background:var(--card-ink); }
+
+/* ---------- tables ---------- */
+.tbl { width:100%; border-collapse:collapse; font-size:15px; line-height:23px; }
+.tbl th, .tbl td { text-align:left; padding:14px 16px; border-bottom:1px solid var(--line); vertical-align:top; }
+.ink .tbl th, .ink .tbl td { border-bottom-color:var(--line-ink); }
+.tbl th { font-size:11px; font-family:var(--mono); letter-spacing:.14em; text-transform:uppercase; color:var(--label); font-weight:700; }
+.ink .tbl th { color:var(--on-ink-2); }
+.tbl tr:last-child td { border-bottom:0; }
+.tbl .yes { color:var(--ink); }
+.ink .tbl .yes { color:var(--on-ink); }
+.tbl .no { color:var(--muted); }
+.ink .tbl .no { color:var(--on-ink-2); }
+.tbl-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:var(--r-card); background:var(--white); }
+.ink .tbl-wrap { border-color:var(--line-ink); background:var(--card-ink); }
+
+/* ---------- drawn glyphs + badges ---------- */
+.ic { width:1em; height:1em; display:block; }
+.flag { width:26px; height:26px; border-radius:var(--r-pill); display:grid; place-items:center; flex:none; font-size:14px; }
+.flag.do { background:var(--action); color:var(--white); }
+.flag.dont { background:var(--ink); color:var(--ice); }
+.badge {
+  display:inline-flex; align-items:center; gap:6px; align-self:flex-start;
+  font-size:11px; line-height:16px; font-weight:600; letter-spacing:.01em;
+  border-radius:var(--r-pill); padding:4px 10px; border:1px solid;
+}
+.badge .ic { font-size:12px; }
+.badge.pass { color:var(--action-text); border-color:rgb(11 126 163 / .35); background:rgb(11 126 163 / .07); }
+.badge.limit { color:var(--muted); border-color:rgb(76 100 120 / .35); background:rgb(76 100 120 / .07); }
+.ink .badge.pass { color:var(--ice); border-color:rgb(34 189 227 / .55); background:rgb(34 189 227 / .12); }
+.ink .badge.limit { color:var(--on-ink-2); border-color:var(--line-ink); background:rgb(29 70 106 / .35); }
+
+/* ---------- colour specimens ---------- */
+.spec { border-radius:var(--r-card); overflow:hidden; border:1px solid var(--line); background:var(--white); display:flex; flex-direction:column; }
+.ink .spec { border-color:var(--line-ink); background:var(--card-ink); }
+.spec .field { min-height:116px; display:flex; align-items:flex-end; padding:var(--s4); font-size:20px; font-weight:700; letter-spacing:-.02em; }
+.spec .meta { padding:var(--s4); display:flex; flex-direction:column; gap:var(--s2); }
+.spec .hex { font-family:var(--mono); font-size:12.5px; letter-spacing:.04em; color:var(--label); }
+.ink .spec .hex { color:var(--on-ink-2); }
+.spec .role { font-size:13.5px; line-height:20px; color:var(--muted); }
+.ink .spec .role { color:var(--on-ink-2); }
+
+/* ---------- tiles + figures ---------- */
+figure { margin:0; display:flex; flex-direction:column; gap:var(--s3); }
+.tile {
+  border-radius:var(--r-card); border:1px solid var(--line);
+  display:grid; place-items:center; padding:var(--s8); min-height:180px; position:relative;
+}
+.tile.on-paper { background:var(--paper); }
+.tile.on-white { background:var(--white); }
+.tile.on-ink { background:var(--ink); border-color:var(--line-ink); }
+.tile.on-ice { background:var(--ice); border-color:rgb(11 126 163 / .18); }
+.tile.on-mist { background:var(--mist); border-color:rgb(11 126 163 / .14); }
+.ink .tile { border-color:var(--line-ink); }
+.tile-4x3 { aspect-ratio:4/3; min-height:0; }
+.tile .corner { position:absolute; top:12px; right:12px; }
+.clearspace { border:1px dashed var(--action); border-radius:var(--r-input); padding:48px; display:grid; place-items:center; }
+.ink .clearspace { border-color:var(--cyan); }
+.sizes { display:flex; align-items:flex-end; gap:var(--s6); flex-wrap:wrap; }
+.sizes figure { align-items:center; gap:var(--s2); }
+
+/* ---------- type specimen ---------- */
+.spec-row { display:grid; grid-template-columns:172px minmax(0,1fr); gap:var(--s6); padding:var(--s6) 0; border-top:1px solid var(--line); align-items:baseline; }
+.spec-row:first-child { border-top:0; }
+.t-hero { font-size:64px; line-height:64px; font-weight:700; letter-spacing:-.05em; }
+.t-sec { font-size:44px; line-height:48px; font-weight:700; letter-spacing:-.04em; }
+.t-stand { font-size:22px; line-height:31px; font-weight:400; }
+.t-body { font-size:17px; line-height:26px; font-weight:400; }
+.t-mono { font-family:var(--mono); font-size:14px; line-height:22px; }
+
+/* ---------- code ---------- */
+pre {
+  margin:0; background:var(--ink); color:var(--on-ink); border:1px solid var(--line-ink);
+  border-radius:var(--r-card); padding:var(--s6); overflow-x:auto;
+  font-family:var(--mono); font-size:12.5px; line-height:20px;
+}
+pre.cmd { white-space:pre-wrap; overflow-wrap:anywhere; }
+pre .c { color:var(--on-ink-2); }
+pre .k { color:var(--cyan); }
+code.inline { font-family:var(--mono); font-size:13.5px; background:var(--mist); border:1px solid rgb(11 126 163 / .14); border-radius:6px; padding:2px 6px; }
+.ink code.inline { background:var(--card-ink); border-color:var(--line-ink); color:var(--on-ink); }
+
+/* ---------- scale bars + radii ---------- */
+.bars { display:flex; flex-direction:column; gap:var(--s3); }
+.bar-row { display:grid; grid-template-columns:56px minmax(0,1fr); gap:var(--s4); align-items:center; }
+.bar { height:14px; border-radius:3px; background:var(--cyan); }
+.radii { display:flex; gap:var(--s3); flex-wrap:wrap; }
+.radii figure { align-items:center; gap:var(--s2); }
+.radii .sq { width:68px; height:68px; background:var(--mist); border:1px solid rgb(11 126 163 / .18); }
+
+/* ---------- tabs ---------- */
+.tabs { display:flex; gap:var(--s1); padding:var(--s1); background:var(--mist); border:1px solid rgb(11 126 163 / .14); border-radius:var(--r-pill); align-self:flex-start; }
+.tab {
+  border:0; background:transparent; font-family:inherit; font-size:13.5px; font-weight:600;
+  color:var(--muted); padding:8px 16px; border-radius:var(--r-pill); cursor:pointer;
+  transition:background var(--t-fill) var(--ease), color var(--t-fill) var(--ease);
+}
+.tab:hover { color:var(--ink); }
+.tab[aria-selected="true"] { background:var(--ink); color:var(--white); }
+.panel[hidden] { display:none; }
+.panel { padding-top:var(--s6); }
+
+/* ---------- sample components (brand surfaces only) ---------- */
+.field-sample { display:flex; flex-direction:column; gap:6px; max-width:340px; }
+.field-sample input {
+  font-family:inherit; font-size:15px; color:var(--ink); background:var(--white);
+  border:1px solid var(--line); border-radius:var(--r-input); padding:11px 14px;
+  transition:border-color var(--t-fill) var(--ease);
+}
+.field-sample input:hover { border-color:var(--muted); }
+.sample-card { max-width:360px; }
+.sample-row { display:flex; gap:var(--s3); flex-wrap:wrap; align-items:center; }
+
+/* ---------- applications ---------- */
+.dl { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:var(--s4); }
+.dl a {
+  display:flex; flex-direction:column; gap:10px; color:var(--ink);
+  border:1px solid var(--line); border-radius:var(--r-input); padding:var(--s4); background:var(--white);
+  transition:border-color var(--t-lift) var(--ease), transform var(--t-lift) var(--ease);
+}
+.dl a:hover { border-color:var(--action); transform:translateY(-2px); color:var(--ink); }
+.dl .thumb { background:var(--mist); border-radius:var(--r-btn); height:88px; display:grid; place-items:center; padding:var(--s3); }
+.dl .thumb.dark { background:var(--ink); }
+.dl b { font-size:14px; }
+.social-tile {
+  aspect-ratio:1; background:var(--ink); border-radius:var(--r-card); border:1px solid var(--line-ink);
+  padding:var(--s8); display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden;
+}
+.social-tile .glow { position:absolute; width:360px; height:360px; right:-140px; top:-140px; border-radius:var(--r-pill);
+  background:radial-gradient(circle, rgb(34 189 227 / .28), rgb(34 189 227 / 0) 62%); pointer-events:none; }
+.instance-mock { background:var(--white); border:1px solid var(--line); border-radius:var(--r-card); padding:var(--s8); display:flex; flex-direction:column; gap:var(--s6); }
+.links { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:var(--s4); }
+.links a { border:1px solid var(--line); border-radius:var(--r-input); padding:var(--s4) 18px; display:flex; flex-direction:column; gap:4px; color:var(--ink); background:var(--white);
+  transition:border-color var(--t-lift) var(--ease), transform var(--t-lift) var(--ease); }
+.links a:hover { border-color:var(--action); transform:translateY(-2px); }
+
+/* ---------- rhythm + grid demos ---------- */
+.rhythm { display:flex; flex-direction:column; gap:6px; }
+.rhythm div { border-radius:6px; padding:10px 14px; font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; }
+.rhythm .r-ink { background:var(--ink); color:var(--ice); border:1px solid var(--line-ink); }
+.rhythm .r-paper { background:var(--paper); color:var(--label); border:1px solid var(--line); }
+.ink .rhythm .r-paper { background:var(--paper); border-color:transparent; }
+.cols { display:grid; grid-template-columns:repeat(12, 1fr); gap:8px; }
+.cols i { display:block; height:64px; border-radius:4px; background:rgb(34 189 227 / .22); border:1px solid rgb(34 189 227 / .45); }
+.ink .cols i { background:rgb(34 189 227 / .30); border-color:rgb(34 189 227 / .62); }
+.screen-frame { border-radius:var(--r-card); background:var(--paper); border:1px solid var(--line); aspect-ratio:16/9; display:grid; place-items:center; padding:var(--s6); text-align:center; }
+.ink .screen-frame { background:var(--card-ink); border-color:var(--line-ink); }
+
+/* ---------- misuse demos ---------- */
+.demo-mark-recolour { filter:hue-rotate(96deg) saturate(1.6); }
+.demo-mark-mono { filter:grayscale(1) contrast(.85); }
+.demo-badge { width:120px; height:120px; border-radius:var(--r-pill); background:var(--cyan); display:grid; place-items:center; }
+.demo-gradient { width:100%; height:100%; min-height:120px; border-radius:var(--r-card); background:linear-gradient(120deg,#22BDE3,#16A3E2 55%,#0B7EA3); display:grid; place-items:center; }
+.demo-indigo { background:#5856D6; color:var(--white); }
+.demo-type-bad { color:var(--cyan); font-size:15px; line-height:23px; font-weight:600; }
+.demo-type-good { color:var(--action-text); font-size:15px; line-height:23px; font-weight:600; }
+
+/* ---------- footer ---------- */
+footer { background:var(--ink); color:var(--on-ink-2); padding:var(--s24) var(--s8); }
+footer .in { max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:var(--s6); }
+footer .lockup-live { display:flex; align-items:center; gap:14px; }
+footer .word { font-size:26px; font-weight:700; letter-spacing:-.045em; color:var(--white); }
+footer .foot-row { display:flex; flex-wrap:wrap; gap:var(--s6); justify-content:space-between; align-items:baseline; border-top:1px solid var(--line-ink); padding-top:var(--s6); }
+
+/* ---------- responsive ---------- */
+@media (max-width:1023px) {
+  .hero { padding:72px var(--s6) 64px; }
+  .hero .in { grid-template-columns:minmax(0,1fr); gap:var(--s8); }
+  .mark-tile { max-width:220px; }
+  .band { padding:72px var(--s6); }
+  .band > .wrap { gap:var(--s8); }
+  .topbar .in { padding:0 var(--s6); }
+  footer { padding:64px var(--s6); }
+}
+@media (max-width:760px) {
+  body { font-size:16px; line-height:25px; }
+  .lede { font-size:19px; line-height:28px; }
+  .g2, .g3, .links { grid-template-columns:minmax(0,1fr); }
+  .g4 { grid-template-columns:repeat(2, minmax(0,1fr)); }
+  .sec-head { grid-template-columns:minmax(0,1fr); gap:var(--s3); }
+  .sec-num { padding-top:0; }
+  .spec-row { grid-template-columns:minmax(0,1fr); gap:var(--s3); }
+  .t-hero { font-size:44px; line-height:46px; }
+  .t-sec { font-size:32px; line-height:36px; }
+  .cols { grid-template-columns:repeat(6, 1fr); }
+  .band { padding:56px var(--s4); }
+  .topbar .in { padding:0 var(--s4); gap:var(--s3); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  * { transition-duration:1ms !important; animation-duration:1ms !important; }
+  .btn:hover, .dl a:hover, .links a:hover { transform:none; }
+}
 </style>
 </head>
 <body>
 
+<a class="skip" href="#foundation">Skip to the guidelines</a>
+
+<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <symbol id="ic-check" viewBox="0 0 16 16"><path d="M3.4 8.5 6.5 11.6 12.7 4.7" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="ic-cross" viewBox="0 0 16 16"><path d="M4.6 4.6 11.4 11.4M11.4 4.6 4.6 11.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="ic-download" viewBox="0 0 16 16"><path d="M8 2.8v7.4M4.9 7.4 8 10.5l3.1-3.1M3.2 13.2h9.6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="in">
+    <img class="lockup" src="../assets/logo/vidra-lockup-horizontal.svg" alt="Vidra">
+    <span class="sep" aria-hidden="true"></span>
+    <span class="caption">Brand guidelines</span>
+    <span class="chip">v1.1 · 2026</span>
+  </div>
+</header>
+
 <div class="hero">
   <div class="in">
-    <img src="../assets/logo/vidra-icon.svg" width="72" height="72" alt="Vidra">
-    <h1>Vidra Brand Center</h1>
-    <div class="rule"></div>
-    <p>Approved logos, colours, guidelines and README snippets. If it is not here or in the guidelines, it is not part of the brand.</p>
+    <div class="hero-copy">
+      <span class="kicker">Vidra brand · version 1.1</span>
+      <h1 class="h1">Run your own video platform.</h1>
+      <div class="rule"></div>
+      <p class="lede">Vidra is a federated video platform you install yourself, the way you would install WordPress. One low-cost server serves thousands or millions of viewers because egress is distributed rather than paid for.</p>
+      <p class="body-2">These are the rules for how Vidra looks and speaks — everywhere outside the product interface. Inside the product, the design system governs.</p>
+      <div class="cta-row">
+        <a class="btn btn-fill" href="#mark">The mark</a>
+        <a class="btn btn-ghost" href="#assets">Download assets</a>
+      </div>
+    </div>
+    <div class="mark-tile">
+      <img src="../assets/logo/vidra-icon.svg" width="132" height="132" alt="The Vidra mark">
+    </div>
   </div>
 </div>
 
-<main>
-  <section>
-    <div class="kicker">Assets</div>
-    <h2>Logos &amp; lockups</h2>
-    <div class="dl">
-      <a href="../assets/logo/vidra-icon.svg" download><span class="thumb"><img src="../assets/logo/vidra-icon.svg" width="48" alt=""></span><b>The mark</b><span>SVG · never modified</span></a>
-      <a href="../assets/logo/vidra-logotype.svg" download><span class="thumb"><img src="../assets/logo/vidra-logotype.svg" height="30" alt=""></span><b>Logotype (drawn, v1)</b><span>Fixed outlines · logo placements</span></a>
-      <a href="../assets/logo/vidra-lockup-horizontal.svg" download><span class="thumb"><img src="../assets/logo/vidra-lockup-horizontal.svg" height="44" alt=""></span><b>Horizontal lockup</b><span>Default for headers</span></a>
-      <a href="../assets/logo/vidra-lockup-stacked.svg" download><span class="thumb"><img src="../assets/logo/vidra-lockup-stacked.svg" height="70" alt=""></span><b>Stacked lockup</b><span>Square placements</span></a>
-      <a href="../assets/readme/banner.svg" download><span class="thumb dark"><img src="../assets/readme/banner.svg" width="168" alt=""></span><b>README banner</b><span>Repo heroes</span></a>
-      <a href="../assets/readme/powered-by-vidra.svg" download><span class="thumb"><img src="../assets/readme/powered-by-vidra.svg" height="24" alt=""></span><b>Powered-by badge</b><span>Instance credit</span></a>
+<div class="shell">
+  <nav class="toc" id="contents" data-ground="paper" aria-label="Contents">
+    <div class="toc-inner">
+      <p class="caption" id="contents-label">Contents</p>
+      <ul>
+        <li><a href="#foundation"><span class="n">01</span> Foundation</a></li>
+        <li><a href="#mark"><span class="n">02</span> The mark</a></li>
+        <li><a href="#lockups"><span class="n">03</span> Lockups</a></li>
+        <li><a href="#colour"><span class="n">04</span> Colour</a></li>
+        <li><a href="#typography"><span class="n">05</span> Typography</a></li>
+        <li><a href="#voice"><span class="n">06</span> Voice</a></li>
+        <li><a href="#messaging"><span class="n">07</span> Messaging</a></li>
+        <li><a href="#imagery"><span class="n">08</span> Imagery &amp; layout</a></li>
+        <li><a href="#system"><span class="n">09</span> Design system</a></li>
+        <li><a href="#misuse"><span class="n">10</span> Misuse</a></li>
+        <li><a href="#assets"><span class="n">11</span> Applications</a></li>
+      </ul>
     </div>
-  </section>
+  </nav>
 
-  <section>
-    <div class="kicker">Colour</div>
-    <h2>Brand palette — cyan outside the product, indigo inside it</h2>
-    <div class="grid">
-      <div class="sw"><i style="background:#22bde3"></i><b>Vidra Cyan</b><code>#22BDE3</code></div>
-      <div class="sw"><i style="background:#16a3e2"></i><b>Deep Cyan</b><code>#16A3E2</code></div>
-      <div class="sw"><i style="background:#0b7ea3"></i><b>Action Cyan</b><code>#0B7EA3</code></div>
-      <div class="sw"><i style="background:#cbf2f4"></i><b>Ice</b><code>#CBF2F4</code></div>
-      <div class="sw"><i style="background:#0c2136"></i><b>Ink</b><code>#0C2136</code></div>
-      <div class="sw"><i style="background:#1d466a"></i><b>Slate</b><code>#1D466A</code></div>
-      <div class="sw"><i style="background:#4c6478"></i><b>Muted</b><code>#4C6478</code></div>
-      <div class="sw"><i style="background:#f5f5f7; border:1px solid var(--line)"></i><b>Paper</b><code>#F5F5F7</code></div>
-    </div>
-  </section>
+  <main id="main">
 
-  <section>
-    <div class="kicker">READMEs</div>
-    <h2>Put the brand on a repo</h2>
-    <pre>&lt;p align="center"&gt;
+    <!-- 01 ---------------------------------------------------------- -->
+    <section class="band paper" id="foundation" data-ground="paper" aria-labelledby="h-foundation">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">01</span>
+          <div class="sec-title">
+            <h2 id="h-foundation">Foundation</h2>
+            <p class="lede">What Vidra is, how it sounds, and what it promises. Everything after this page is a rule; this section is the reason the rules exist.</p>
+          </div>
+        </div>
+
+        <div class="g3">
+          <div class="card tint">
+            <span class="num">Mission</span>
+            <h3>Video hosting anyone can own</h3>
+            <p class="body-2">One small server holds the origin. Distribution is offloaded to the people watching, to a CDN, or to IPFS — so the cost of an audience does not scale with the size of it.</p>
+          </div>
+          <div class="card tint">
+            <span class="num">Personality</span>
+            <h3>Plain, precise, confident</h3>
+            <p class="body-2">Vidra says the number, not the adjective. It uses the real term — ActivityPub, egress, CID, instance — and writes for the person reading the docs, not the person skimming a homepage.</p>
+          </div>
+          <div class="card tint">
+            <span class="num">Promise</span>
+            <h3>No vendor between you and your viewers</h3>
+            <p class="body-2">AGPL v3, federation on by default, one compose file. You hold the domain, the database and the media, and your egress bill stays flat as the audience grows.</p>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="caption">Where the product is today</p>
+          <div class="card">
+            <h3>Vidra is at v0.5.0, and one command installs it</h3>
+            <p class="body-2">Say the version when it matters and keep it current: a version number is a fact, "early access" is an adjective. The install line is the shortest true description of the product, so it belongs on the surfaces that describe it.</p>
+            <pre class="cmd">curl -fsSL https://raw.githubusercontent.com/yegamble/vidra/main/install.sh | sh</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="caption">Three proof points</p>
+          <div class="g3">
+            <div class="card">
+              <span class="num">01</span>
+              <h3>Low egress at scale</h3>
+              <p class="body-2">Peers and IPFS carry distribution, so bandwidth cost stops tracking viewer count.</p>
+            </div>
+            <div class="card">
+              <span class="num">02</span>
+              <h3>Federated by default</h3>
+              <p class="body-2">ActivityPub and ATProto per channel, not bolted on afterwards.</p>
+            </div>
+            <div class="card">
+              <span class="num">03</span>
+              <h3>Yours to run</h3>
+              <p class="body-2">AGPL v3, one compose file, no vendor between you and your viewers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 ---------------------------------------------------------- -->
+    <section class="band ink" id="mark" data-ground="ink" aria-labelledby="h-mark">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">02</span>
+          <div class="sec-title">
+            <h2 id="h-mark">The mark</h2>
+            <p class="lede">One otter, four sizes, no variations. The mark is the only drawn asset the brand owns. It is supplied as vector and is never redrawn, recoloured, outlined, rotated or set inside another shape.</p>
+          </div>
+        </div>
+
+        <div class="g3">
+          <figure>
+            <div class="tile on-paper"><img src="../assets/logo/vidra-icon.svg" width="88" height="88" alt="The mark on Paper"></div>
+            <figcaption class="caption">On paper · preferred</figcaption>
+          </figure>
+          <figure>
+            <div class="tile on-ink"><img src="../assets/logo/vidra-icon.svg" width="88" height="88" alt="The mark on Ink"></div>
+            <figcaption class="caption">On ink · preferred</figcaption>
+          </figure>
+          <figure>
+            <div class="tile on-ice"><img src="../assets/logo/vidra-icon.svg" width="88" height="88" alt="The mark on Ice"></div>
+            <figcaption class="caption">On ice · permitted</figcaption>
+          </figure>
+        </div>
+
+        <div class="g2">
+          <div class="block">
+            <p class="caption">Clear space</p>
+            <div class="card">
+              <div class="clearspace"><img src="../assets/logo/vidra-icon.svg" width="96" height="96" alt="The mark inside its clear space"></div>
+              <p class="body-2">Half the mark's height on every side. Nothing enters the dashed frame — not type, not a rule, not the edge of the page.</p>
+            </div>
+          </div>
+          <div class="block">
+            <p class="caption">Minimum sizes</p>
+            <div class="card">
+              <div class="sizes">
+                <figure><img src="../assets/logo/vidra-icon.svg" width="16" height="16" alt="The mark at 16 pixels"><figcaption class="caption">16 · favicon</figcaption></figure>
+                <figure><img src="../assets/logo/vidra-icon.svg" width="24" height="24" alt="The mark at 24 pixels"><figcaption class="caption">24 · in UI</figcaption></figure>
+                <figure><img src="../assets/logo/vidra-icon.svg" width="40" height="40" alt="The mark at 40 pixels"><figcaption class="caption">40 · in print</figcaption></figure>
+                <figure><img src="../assets/logo/vidra-icon.svg" width="64" height="64" alt="The mark at 64 pixels"><figcaption class="caption">64 · comfortable</figcaption></figure>
+              </div>
+              <p class="body-2">Below 16px the silhouette stops reading. Set the mark at these sizes rather than between them.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <p class="caption">Approved backgrounds</p>
+          <p>Paper <code class="inline">#F5F5F7</code> and Ink <code class="inline">#0C2136</code> are preferred. Ice <code class="inline">#CBF2F4</code> is permitted. On photography or a video still, the mark sits behind a 45% Ink scrim — never directly on the image.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 ---------------------------------------------------------- -->
+    <section class="band paper" id="lockups" data-ground="paper" aria-labelledby="h-lockups">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">03</span>
+          <div class="sec-title">
+            <h2 id="h-lockups">Lockups</h2>
+            <p class="lede">The logotype is drawn: "Vidra" as fixed vector outlines at the brand's −0.045em tracking, kerned by hand. It renders identically on every platform, in print, and in forced-colour contexts.</p>
+          </div>
+        </div>
+
+        <div class="g2">
+          <figure>
+            <div class="tile on-white"><img src="../assets/logo/vidra-logotype.svg" width="220" alt="The Vidra logotype"></div>
+            <figcaption class="caption">Logotype · drawn, v1 · 2026-08</figcaption>
+          </figure>
+          <figure>
+            <div class="tile on-white"><img src="../assets/logo/vidra-lockup-horizontal.svg" width="200" alt="Horizontal lockup"></div>
+            <figcaption class="caption">Horizontal · the default</figcaption>
+          </figure>
+          <figure>
+            <div class="tile on-white"><img src="../assets/logo/vidra-lockup-stacked.svg" width="120" alt="Stacked lockup"></div>
+            <figcaption class="caption">Stacked · square placements and avatars</figcaption>
+          </figure>
+          <figure>
+            <div class="tile on-mist"><img src="../assets/logo/vidra-icon.svg" width="72" height="72" alt="The mark alone"></div>
+            <figcaption class="caption">Mark alone · only where "Vidra" is already on screen</figcaption>
+          </figure>
+        </div>
+
+        <div class="g2">
+          <div class="card">
+            <h3>Use the drawn form for logo placements</h3>
+            <p class="body-2">Lockups, banners, headers, decks and print take the drawn logotype. Inline and UI text still sets "Vidra" live in the system face at 700 and −0.045em, so the two forms read as one voice. The horizontal lockup's gap equals a third of the mark's width; it is baked into the file, so never rebuild the lockup by hand.</p>
+          </div>
+          <div class="instance-mock">
+            <p class="caption">Instance lockup</p>
+            <div>
+              <p style="font-size:22px; font-weight:700; letter-spacing:-.02em;">Northgate Video</p>
+              <p class="small">northgate.video</p>
+            </div>
+            <img src="../assets/readme/powered-by-vidra.svg" width="140" alt="powered by Vidra">
+            <p class="body-2">The operator's name leads. Vidra follows in muted type at 13px. Never co-size the two — the platform is the smaller signature.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 ---------------------------------------------------------- -->
+    <section class="band ink" id="colour" data-ground="ink" aria-labelledby="h-colour">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">04</span>
+          <div class="sec-title">
+            <h2 id="h-colour">Colour</h2>
+            <p class="lede">Cyan outside the product, indigo inside it. The mark's cyan sits close to both Bluesky blue and IPFS teal, which the interface reserves for federation identity. Rather than fight that, the boundary is drawn at the edge of the app.</p>
+          </div>
+        </div>
+
+        <div class="g3">
+          <article class="spec">
+            <div class="field" style="background:#22BDE3; color:#0C2136;">Vidra Cyan</div>
+            <div class="meta">
+              <span class="hex">#22BDE3</span>
+              <p class="role">The brand colour. Fills, rules, dots, and large type on Ink, where it reaches 7.4:1.</p>
+              <span class="badge limit"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg>White text 2.2:1 — fills and large type only</span>
+            </div>
+          </article>
+          <article class="spec">
+            <div class="field" style="background:#16A3E2; color:#0C2136;">Deep Cyan</div>
+            <div class="meta">
+              <span class="hex">#16A3E2</span>
+              <p class="role">Secondary fill. The mark's own shadow tone; it is not an interactive colour.</p>
+              <span class="badge limit"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg>White text 2.9:1 — fills and large type only</span>
+            </div>
+          </article>
+          <article class="spec">
+            <div class="field" style="background:#0B7EA3; color:#FFFFFF;">Action Cyan</div>
+            <div class="meta">
+              <span class="hex">#0B7EA3</span>
+              <p class="role">The only cyan that may sit under white text. Every brand button, link and focus ring on Paper is this one.</p>
+              <span class="badge pass"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg>White text 4.6:1 — clears AA</span>
+            </div>
+          </article>
+          <article class="spec">
+            <div class="field" style="background:#CBF2F4; color:#0C2136;">Ice</div>
+            <div class="meta">
+              <span class="hex">#CBF2F4</span>
+              <p class="role">The saturated tint: charts, brand moments, and text on Ink where cyan would be too loud.</p>
+              <span class="badge pass"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg>Ink text 13.6:1 — clears AA</span>
+            </div>
+          </article>
+          <article class="spec">
+            <div class="field" style="background:#EEF7FB; color:#0C2136;">Mist</div>
+            <div class="meta">
+              <span class="hex">#EEF7FB · new in v1.1</span>
+              <p class="role">The quiet tint: cards and section grounds on Paper, where Ice would read as a brand moment.</p>
+              <span class="badge pass"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg>Ink text 15.0:1 — clears AA</span>
+            </div>
+          </article>
+          <article class="spec">
+            <div class="field" style="background:#0C2136; color:#CBF2F4; border-bottom:1px solid rgb(29 70 106 / .9);">Ink</div>
+            <div class="meta">
+              <span class="hex">#0C2136</span>
+              <p class="role">The dark ground. Headlines, full-bleed sections, the banner, social tiles.</p>
+              <span class="badge pass"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg>White text 16.3:1 — clears AA</span>
+            </div>
+          </article>
+          <article class="spec">
+            <div class="field" style="background:#1D466A; color:#FFFFFF;">Slate</div>
+            <div class="meta">
+              <span class="hex">#1D466A</span>
+              <p class="role">Dividers and depth on Ink. Never body text on Paper — it reads as a broken link.</p>
+              <span class="badge pass"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg>White text 9.8:1 — clears AA</span>
+            </div>
+          </article>
+          <article class="spec">
+            <div class="field" style="background:#4C6478; color:#FFFFFF;">Muted</div>
+            <div class="meta">
+              <span class="hex">#4C6478</span>
+              <p class="role">Secondary text on Paper. Smaller than 14px, darken to #5C7285 or use Ink.</p>
+              <span class="badge pass"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg>On Paper 5.7:1 — clears AA</span>
+            </div>
+          </article>
+          <article class="spec">
+            <div class="field" style="background:#F5F5F7; color:#0C2136;">Paper</div>
+            <div class="meta">
+              <span class="hex">#F5F5F7</span>
+              <p class="role">Shared with the product canvas — the one continuity across the boundary.</p>
+              <span class="badge pass"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg>Ink text 15.0:1 — clears AA</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="block">
+          <p class="caption">Two tints, two jobs</p>
+          <p>Ice is the saturated tint — charts, brand moments, type on Ink. Mist is the quiet one — documentation cards and marketing section grounds on Paper, where Ice would announce itself. Both sit under Ink text at better than 13:1.</p>
+        </div>
+
+        <div class="block">
+          <p class="caption">What each surface leads with</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead>
+                <tr><th scope="col">Surface</th><th scope="col">Leads with</th><th scope="col">Accent for actions</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Marketing site</td><td>Ink + Vidra Cyan</td><td>Action Cyan</td></tr>
+                <tr><td>Docs</td><td>Paper + Ink</td><td>Action Cyan</td></tr>
+                <tr><td>Social, decks, print</td><td>Ink + Vidra Cyan</td><td>Vidra Cyan as fill only</td></tr>
+                <tr><td>Transactional email</td><td>Paper + Ink</td><td>Action Cyan</td></tr>
+                <tr><td><strong>The product interface</strong></td><td>Canvas + surfaces</td><td><strong>systemIndigo — unchanged</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="callout">
+          <p class="caption">The boundary</p>
+          <p>Cyan never becomes an interactive colour inside the app, and indigo never appears on a brand surface. The handoff happens at the sign-in screen: seeing indigo tells you that you are in the product; seeing cyan tells you that you are reading about it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 ---------------------------------------------------------- -->
+    <section class="band paper" id="typography" data-ground="paper" aria-labelledby="h-typography">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">05</span>
+          <div class="sec-title">
+            <h2 id="h-typography">Typography</h2>
+            <p class="lede">One face, tighter as it gets bigger. The brand uses the same system stack as the product, so a marketing page and the app are set in the same face. Nothing is licensed, nothing downloads.</p>
+          </div>
+        </div>
+
+        <div class="g2">
+          <div class="card tint">
+            <h4>The stack</h4>
+            <p class="mono" style="line-height:22px;">-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif</p>
+            <p class="body-2">The native UI face on every platform, with a Helvetica Neue fallback. This page — like the logotype, like the product — asks for nothing over the network.</p>
+          </div>
+          <div class="card tint">
+            <h4>Two weights, sentence case</h4>
+            <p class="body-2">Regular for reading, bold for headings. Semibold exists for 13–15px labels. Light and black are not part of the brand. Headlines, buttons, nav and section labels are sentence case, always; all caps is reserved for 11px micro-labels.</p>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="caption">The scale, at size</p>
+          <div class="card">
+            <div class="spec-row">
+              <div>
+                <p class="caption">Hero</p>
+                <p class="small">64 / 64 · 700 · −0.05em</p>
+              </div>
+              <p class="t-hero">Run your own</p>
+            </div>
+            <div class="spec-row">
+              <div>
+                <p class="caption">Section head</p>
+                <p class="small">44 / 48 · 700 · −0.04em</p>
+              </div>
+              <p class="t-sec">One small server</p>
+            </div>
+            <div class="spec-row">
+              <div>
+                <p class="caption">Standfirst</p>
+                <p class="small">22 / 31 · 400</p>
+              </div>
+              <p class="t-stand">One or two lines under a headline, never three.</p>
+            </div>
+            <div class="spec-row">
+              <div>
+                <p class="caption">Body</p>
+                <p class="small">17 / 26 · 400</p>
+              </div>
+              <p class="t-body" style="max-width:66ch;">Set body text to a 66-character measure. Egress stays flat because peers carry the bytes, and the paragraph that explains it should be as easy to read on a phone as on a laptop.</p>
+            </div>
+            <div class="spec-row">
+              <div>
+                <p class="caption">Mono</p>
+                <p class="small">14 · commands, CIDs, stream keys</p>
+              </div>
+              <p class="t-mono">vidra instance status --json</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 ---------------------------------------------------------- -->
+    <section class="band ink" id="voice" data-ground="ink" aria-labelledby="h-voice">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">06</span>
+          <div class="sec-title">
+            <h2 id="h-voice">Voice</h2>
+            <p class="lede">Say the number, not the adjective. Vidra's audience installs software on servers — they can tell when a claim is measurable and when it is decoration. Write for the person reading the docs, not the person skimming the homepage.</p>
+          </div>
+        </div>
+
+        <div class="g4">
+          <div class="card"><h4>Plain</h4><p class="body-2">The shortest true sentence wins.</p></div>
+          <div class="card"><h4>Factual</h4><p class="body-2">Every claim has a number or a mechanism.</p></div>
+          <div class="card"><h4>Confident</h4><p class="body-2">No hedging, no "simply", no apologising for complexity.</p></div>
+          <div class="card"><h4>Precise</h4><p class="body-2">Use the real term: ActivityPub, egress, CID, instance.</p></div>
+        </div>
+
+        <div class="block">
+          <p class="caption">Write this, not this</p>
+          <div class="tbl-wrap">
+            <table class="tbl">
+              <thead>
+                <tr>
+                  <th scope="col"><span style="display:inline-flex; align-items:center; gap:6px;"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg>Write this</span></th>
+                  <th scope="col"><span style="display:inline-flex; align-items:center; gap:6px;"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg>Not this</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="yes">Serve a million viewers from one small server.</td><td class="no">Unleash the power of decentralised video at scale.</td></tr>
+                <tr><td class="yes">Egress stays flat because peers carry the bytes.</td><td class="no">Revolutionary bandwidth savings you have to see to believe.</td></tr>
+                <tr><td class="yes">Federation is on by default. Turn it off per channel.</td><td class="no">Seamlessly connect with the wider fediverse ecosystem.</td></tr>
+                <tr><td class="yes">Install it yourself. It is AGPL v3.</td><td class="no">Join a movement that is putting creators back in control.</td></tr>
+                <tr><td class="yes">Upload failed: the file is 4.2 GB and this instance allows 2 GB.</td><td class="no">Oops! Something went wrong. Please try again later.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="g2">
+          <div class="card">
+            <h3>You, not we</h3>
+            <p class="body-2">The reader runs the instance: "you install", "your instance", "your viewers". Vidra is the thing, not the protagonist. A sentence that starts with "we" is usually a sentence about the project rather than about the reader's server.</p>
+          </div>
+          <div class="card">
+            <h3>No emoji</h3>
+            <p class="body-2">Not in the product, where CI enforces it, and not in the docs, the release notes, the commit messages or on social. Icons are drawn glyphs from the product's set — the check and cross on this page are drawn vectors, not characters.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 ---------------------------------------------------------- -->
+    <section class="band paper" id="messaging" data-ground="paper" aria-labelledby="h-messaging">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">07</span>
+          <div class="sec-title">
+            <h2 id="h-messaging">Messaging</h2>
+            <p class="lede">One line does the work. It appears in the banner, site heroes, social bios and meta descriptions — always with the full stop.</p>
+          </div>
+        </div>
+
+        <div class="card tint" style="gap:var(--s4);">
+          <p class="caption">The line · chosen 2026-08</p>
+          <p class="t-sec">Run your own video platform.</p>
+          <p class="body-2">The shortest true sentence — the voice's own first principle — leading on ownership, which is the reason people self-host at all.</p>
+        </div>
+
+        <div class="block">
+          <p class="caption">Two supporting lines</p>
+          <div class="g2">
+            <div class="card">
+              <h3>One small server. A million viewers.</h3>
+              <p class="body-2">The hardest-to-match technical claim, and concrete enough to be checked.</p>
+            </div>
+            <div class="card">
+              <h3>Video hosting you own, at egress you can afford.</h3>
+              <p class="body-2">Names the cost problem out loud; the most specific about who it is for.</p>
+            </div>
+          </div>
+          <p class="small">They support the line in longer formats — section heads, decks, docs intros. They never replace it.</p>
+        </div>
+
+        <div class="block">
+          <p class="caption">The paragraph</p>
+          <p class="lede" style="color:var(--ink); max-width:1080px;">Vidra is a federated video platform you install yourself, the way you would install WordPress. One low-cost server serves thousands or millions of viewers because egress is distributed rather than paid for. It federates over ActivityPub and ATProto, stores media on IPFS if you want it to, and it is free software under AGPL v3.</p>
+        </div>
+
+        <div class="block">
+          <p class="caption">Three proof points</p>
+          <div class="g3">
+            <div class="card tint">
+              <h4>Low egress at scale</h4>
+              <p class="body-2">Peers and IPFS carry distribution.</p>
+            </div>
+            <div class="card tint">
+              <h4>Federated by default</h4>
+              <p class="body-2">ActivityPub and ATProto per channel, not bolted on.</p>
+            </div>
+            <div class="card tint">
+              <h4>Yours to run</h4>
+              <p class="body-2">AGPL v3, one compose file, no vendor between you and your viewers.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="caption">What Vidra is not</p>
+          <div class="g3">
+            <div class="card">
+              <span class="flag dont"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg></span>
+              <h4>Not a hosted service</h4>
+              <p class="body-2">There is no vidra.com to sign up for. You install it.</p>
+            </div>
+            <div class="card">
+              <span class="flag dont"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg></span>
+              <h4>Not a creator monetisation platform</h4>
+              <p class="body-2">No payouts, no ad network, no revenue share to describe.</p>
+            </div>
+            <div class="card">
+              <span class="flag dont"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg></span>
+              <h4>Not a PeerTube fork</h4>
+              <p class="body-2">A clean-room implementation. Say so plainly when asked.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 08 ---------------------------------------------------------- -->
+    <section class="band ink" id="imagery" data-ground="ink" aria-labelledby="h-imagery">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">08</span>
+          <div class="sec-title">
+            <h2 id="h-imagery">Imagery &amp; layout</h2>
+            <p class="lede">Show the product, or show nothing. No photography or illustration library exists; until one does, the only sanctioned imagery is the interface itself — real screens, real thumbnails, real terminal output.</p>
+          </div>
+        </div>
+
+        <div class="g2">
+          <div class="block">
+            <p class="caption">Screens</p>
+            <div class="screen-frame">
+              <p class="small">A real screen sits here: 16px radius, no drop shadow, cropped to the region that proves the point.</p>
+            </div>
+            <p class="body-2">Screens sit on Ink or Paper. Never show full browser chrome. Video stills come from real videos on real instances, credited, cool-toned and un-graded — no filters, no vignette, no cyan wash. Stock photography of people at laptops is not part of this brand.</p>
+          </div>
+          <div class="block">
+            <p class="caption">Rhythm</p>
+            <div class="rhythm">
+              <div class="r-ink">Ink</div>
+              <div class="r-paper">Paper</div>
+              <div class="r-ink">Ink</div>
+              <div class="r-paper">Paper</div>
+              <div class="r-ink">Ink</div>
+            </div>
+            <p class="body-2">Long scroll, alternating Ink and Paper sections — never two Ink sections in a row. This document follows its own rule: every section on this page flips ground, and the contents nav flips with it.</p>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="caption">Grid</p>
+          <div class="cols" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <div class="g4">
+            <div class="card"><span class="num">Columns</span><p class="t-stand">12</p></div>
+            <div class="card"><span class="num">Text measure</span><p class="t-stand">1080px</p></div>
+            <div class="card"><span class="num">Media measure</span><p class="t-stand">1280px</p></div>
+            <div class="card"><span class="num">Section padding</span><p class="t-stand">96 / 48</p></div>
+          </div>
+          <p class="body-2">Whitespace is the cheapest material here: if a section feels empty, cut a sentence rather than adding a card.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 ---------------------------------------------------------- -->
+    <section class="band paper" id="system" data-ground="paper" aria-labelledby="h-system">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">09</span>
+          <div class="sec-title">
+            <h2 id="h-system">Design system</h2>
+            <p class="lede">Two token sheets, one boundary. Brand surfaces read from <code class="inline">brand-tokens.css</code>; the product interface reads from <code class="inline">tokens.css</code> and keeps systemIndigo. Nothing crosses.</p>
+          </div>
+        </div>
+
+        <div class="g2">
+          <div class="block">
+            <p class="caption">Brand surfaces · design-system/brand-tokens.css</p>
+            <pre><span class="c">/* marketing, docs, decks, README art */</span>
+:root {
+  <span class="k">--brand-cyan</span>:        #22BDE3;
+  <span class="k">--brand-cyan-action</span>: #0B7EA3;
+  <span class="k">--brand-ice</span>:         #CBF2F4;
+  <span class="k">--brand-mist</span>:        #EEF7FB;
+  <span class="k">--brand-ink</span>:         #0C2136;
+  <span class="k">--brand-r-card</span>:      16px;
+}</pre>
+          </div>
+          <div class="block">
+            <p class="caption">The product · design-system/tokens.css</p>
+            <pre><span class="c">/* vidra-user ships these; brand never overrides them */</span>
+:root {
+  <span class="k">--canvas</span>:  light-dark(#f5f5f7, #0a0a0a);
+  <span class="k">--accent</span>:  light-dark(#5856d6, #5e5ce6);
+  <span class="k">--r-btn</span>:   10px;
+  <span class="k">--r-card</span>:  16px;
+  <span class="k">--dur-max</span>: 300ms;
+}</pre>
+          </div>
+        </div>
+
+        <div class="g2">
+          <div class="block">
+            <p class="caption">Spacing · 4px base</p>
+            <div class="card">
+              <div class="bars">
+                <div class="bar-row"><span class="mono" style="font-size:12px;">4</span><span class="bar" style="width:4%"></span></div>
+                <div class="bar-row"><span class="mono" style="font-size:12px;">8</span><span class="bar" style="width:8%"></span></div>
+                <div class="bar-row"><span class="mono" style="font-size:12px;">12</span><span class="bar" style="width:13%"></span></div>
+                <div class="bar-row"><span class="mono" style="font-size:12px;">16</span><span class="bar" style="width:17%"></span></div>
+                <div class="bar-row"><span class="mono" style="font-size:12px;">24</span><span class="bar" style="width:26%"></span></div>
+                <div class="bar-row"><span class="mono" style="font-size:12px;">32</span><span class="bar" style="width:34%"></span></div>
+                <div class="bar-row"><span class="mono" style="font-size:12px;">48</span><span class="bar" style="width:52%"></span></div>
+                <div class="bar-row"><span class="mono" style="font-size:12px;">96</span><span class="bar" style="width:100%"></span></div>
+              </div>
+              <p class="body-2">Every gap, pad and offset on a brand surface is a multiple of 4. Sections take 96px desktop and 48px mobile; cards take 24px inside and 16px between.</p>
+            </div>
+          </div>
+          <div class="block">
+            <p class="caption">Radius · concentric</p>
+            <div class="card">
+              <div class="radii">
+                <figure><span class="sq" style="border-radius:10px"></span><figcaption class="caption">10 button</figcaption></figure>
+                <figure><span class="sq" style="border-radius:12px"></span><figcaption class="caption">12 field</figcaption></figure>
+                <figure><span class="sq" style="border-radius:16px"></span><figcaption class="caption">16 card</figcaption></figure>
+                <figure><span class="sq" style="border-radius:20px"></span><figcaption class="caption">20 dialog</figcaption></figure>
+                <figure><span class="sq" style="border-radius:22px"></span><figcaption class="caption">22 sheet</figcaption></figure>
+              </div>
+              <p class="body-2">Radii nest: an inner corner is never larger than the corner containing it. Screens and media use 16, the card radius, on every surface.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="caption">Accessibility</p>
+          <div class="g3">
+            <div class="card tint">
+              <h3>Contrast</h3>
+              <p class="body-2">Body text clears WCAG 2.2 AA at 4.5:1, and 3:1 for large type and UI edges. The product enforces this in CI — axe serious and critical findings block the build — and brand surfaces follow the same bar. Colour never carries meaning on its own: a state always has a glyph or a word next to it.</p>
+            </div>
+            <div class="card tint">
+              <h3>Focus</h3>
+              <p class="body-2">Every interactive element shows a visible 2px focus ring with a 2px offset: Action Cyan on Paper, Ice on Ink. Tab through this page to see it. Removing the ring, or replacing it with a colour change alone, is a defect.</p>
+            </div>
+            <div class="card tint">
+              <h3>Motion</h3>
+              <p class="body-2">Transitions run 150ms for fills and 200ms for lifts, and never exceed 300ms. Everything honours <code class="inline">prefers-reduced-motion</code>, including this page's smooth scrolling and its hover lifts.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="caption">Brand surfaces only</p>
+          <div class="card">
+            <div class="tabs" role="tablist" aria-label="Component samples">
+              <button class="tab" id="tab-buttons" type="button" role="tab" aria-selected="true" aria-controls="panel-buttons">Buttons</button>
+              <button class="tab" id="tab-card" type="button" role="tab" aria-selected="false" aria-controls="panel-card" tabindex="-1">Card</button>
+              <button class="tab" id="tab-field" type="button" role="tab" aria-selected="false" aria-controls="panel-field" tabindex="-1">Field</button>
+            </div>
+
+            <div class="panel" id="panel-buttons" role="tabpanel" aria-labelledby="tab-buttons" tabindex="0">
+              <div class="sample-row">
+                <span class="btn btn-action">Read the docs</span>
+                <span class="btn btn-quiet">Download assets</span>
+                <span style="background:var(--ink); border-radius:var(--r-input); padding:10px 12px; display:inline-flex;">
+                  <span class="btn" style="background:var(--cyan); color:var(--ink);">Fill only — on Ink</span>
+                </span>
+              </div>
+              <p class="small" style="padding-top:var(--s4);">Action Cyan under white text is the only cyan button. Vidra Cyan is a fill with Ink text, used on Ink grounds and in social art.</p>
+            </div>
+
+            <div class="panel" id="panel-card" role="tabpanel" aria-labelledby="tab-card" tabindex="0" hidden>
+              <div class="card tint sample-card">
+                <span class="num">Instance</span>
+                <h3>northgate.video</h3>
+                <p class="body-2">4.2 TB served last month. Egress paid: 61 GB.</p>
+              </div>
+              <p class="small" style="padding-top:var(--s4);">Mist ground, 16px radius, 24px padding, hairline border, no drop shadow.</p>
+            </div>
+
+            <div class="panel" id="panel-field" role="tabpanel" aria-labelledby="tab-field" tabindex="0" hidden>
+              <div class="field-sample">
+                <label class="caption" for="sample-input">Instance domain</label>
+                <input id="sample-input" type="text" value="northgate.video" autocomplete="off" spellcheck="false">
+                <p class="small">Label above the field, always visible. Placeholder text is never the label.</p>
+              </div>
+            </div>
+
+            <p class="small" style="padding-top:var(--s6); border-top:1px solid var(--line); margin-top:var(--s6);">Brand surfaces only — in-product components use systemIndigo and ship from the <a href="../design-system/README.md">design system</a>. These samples exist so a marketing page or a docs site can be built without importing product code.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10 ---------------------------------------------------------- -->
+    <section class="band ink" id="misuse" data-ground="ink" aria-labelledby="h-misuse">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">10</span>
+          <div class="sec-title">
+            <h2 id="h-misuse">Misuse</h2>
+            <p class="lede">The six ways the brand gets broken in practice. The examples on the right are wrong on purpose — the mark in them is the real file with a CSS filter over it, never a modified asset.</p>
+          </div>
+        </div>
+
+        <div class="g3">
+          <figure>
+            <div class="tile tile-4x3 on-paper">
+              <span class="corner flag do"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg></span>
+              <img src="../assets/logo/vidra-icon.svg" width="72" height="72" alt="The mark as supplied">
+            </div>
+            <figcaption class="caption">Do · the mark exactly as supplied</figcaption>
+          </figure>
+          <figure>
+            <div class="tile tile-4x3 on-paper">
+              <span class="corner flag dont"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg></span>
+              <img class="demo-mark-recolour" src="../assets/logo/vidra-icon.svg" width="72" height="72" alt="The mark recoloured — not permitted">
+            </div>
+            <figcaption class="caption">Don't · recolour the mark</figcaption>
+          </figure>
+          <figure>
+            <div class="tile tile-4x3 on-paper">
+              <span class="corner flag dont"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg></span>
+              <span class="demo-badge"><img src="../assets/logo/vidra-icon.svg" width="60" height="60" alt="The mark inside a badge — not permitted"></span>
+            </div>
+            <figcaption class="caption">Don't · set the mark in a circle or badge</figcaption>
+          </figure>
+
+          <figure>
+            <div class="tile tile-4x3 on-paper" style="padding:var(--s6);">
+              <span class="corner flag do"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg></span>
+              <p class="demo-type-good">Federation is on by default. Turn it off per channel.</p>
+            </div>
+            <figcaption class="caption">Do · Action Cyan below 20px</figcaption>
+          </figure>
+          <figure>
+            <div class="tile tile-4x3 on-paper" style="padding:var(--s6);">
+              <span class="corner flag dont"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg></span>
+              <p class="demo-type-bad">Federation is on by default. Turn it off per channel.</p>
+            </div>
+            <figcaption class="caption">Don't · Vidra Cyan below 20px on paper</figcaption>
+          </figure>
+          <figure>
+            <div class="tile tile-4x3 on-paper" style="padding:var(--s6);">
+              <span class="corner flag dont"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg></span>
+              <span class="demo-gradient" aria-hidden="true"></span>
+            </div>
+            <figcaption class="caption">Don't · gradient a brand element</figcaption>
+          </figure>
+
+          <figure>
+            <div class="tile tile-4x3 on-paper" style="padding:var(--s6);">
+              <span class="corner flag do"><svg class="ic" aria-hidden="true"><use href="#ic-check"></use></svg></span>
+              <p style="font-size:15px; line-height:23px; color:var(--ink);">Egress stays flat because peers carry the bytes.</p>
+            </div>
+            <figcaption class="caption">Do · the mechanism, in plain words</figcaption>
+          </figure>
+          <figure>
+            <div class="tile tile-4x3 on-paper" style="padding:var(--s6);">
+              <span class="corner flag dont"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg></span>
+              <p style="font-size:15px; line-height:23px; color:var(--muted);">The otter of the data world, gliding through calm currents.</p>
+            </div>
+            <figcaption class="caption">Don't · animal metaphor or mascot copy</figcaption>
+          </figure>
+          <figure>
+            <div class="tile tile-4x3 on-paper" style="padding:var(--s6);">
+              <span class="corner flag dont"><svg class="ic" aria-hidden="true"><use href="#ic-cross"></use></svg></span>
+              <span class="btn demo-indigo">Install Vidra</span>
+            </div>
+            <figcaption class="caption">Don't · systemIndigo on a brand surface</figcaption>
+          </figure>
+        </div>
+
+        <div class="callout">
+          <p class="caption">Also</p>
+          <p>The mark has six fixed colours and no single-colour version exists yet, so there is no "just make it white" fallback — ask instead. Cyan never becomes a button colour inside the app, and the tri-protocol ribbon belongs to the product: it is the only gradient the identity owns.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 ---------------------------------------------------------- -->
+    <section class="band paper" id="assets" data-ground="paper" aria-labelledby="h-assets">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="sec-num">11</span>
+          <div class="sec-title">
+            <h2 id="h-assets">Applications &amp; downloads</h2>
+            <p class="lede">Six files, hot-linked from this repo's main branch. Merging a fix here ships it everywhere — so nothing is copied into another repo, and nothing is renamed without grepping the org first.</p>
+          </div>
+        </div>
+
+        <div class="g2">
+          <figure>
+            <div class="social-tile">
+              <span class="glow" aria-hidden="true"></span>
+              <img src="../assets/logo/vidra-icon.svg" width="64" height="64" alt="" style="position:relative;">
+              <div style="position:relative; display:flex; flex-direction:column; gap:var(--s3);">
+                <p style="font-size:28px; line-height:32px; font-weight:700; letter-spacing:-.04em; color:var(--white);">Run your own video platform.</p>
+                <span style="height:3px; width:120px; border-radius:2px; background:var(--cyan);"></span>
+              </div>
+            </div>
+            <figcaption class="caption">Social tile · 1:1 · Ink ground, cyan rule, no gradient on the type</figcaption>
+          </figure>
+          <figure>
+            <div class="instance-mock">
+              <div>
+                <p class="caption">Instance footer</p>
+              </div>
+              <div style="display:flex; flex-direction:column; gap:var(--s2);">
+                <p style="font-size:26px; font-weight:700; letter-spacing:-.03em;">Northgate Video</p>
+                <p class="body-2">Independent film archive · Leeds</p>
+              </div>
+              <img src="../assets/readme/powered-by-vidra.svg" width="156" alt="powered by Vidra">
+            </div>
+            <figcaption class="caption">Instance lockup · operator leads, Vidra follows at 13px</figcaption>
+          </figure>
+        </div>
+
+        <div class="block">
+          <p class="caption">Assets</p>
+          <div class="dl">
+            <a href="../assets/logo/vidra-icon.svg" download>
+              <span class="thumb"><img src="../assets/logo/vidra-icon.svg" width="52" height="52" alt=""></span>
+              <b>The mark</b><span class="small">SVG · never modified</span>
+            </a>
+            <a href="../assets/logo/vidra-logotype.svg" download>
+              <span class="thumb"><img src="../assets/logo/vidra-logotype.svg" width="132" alt=""></span>
+              <b>Logotype · drawn, v1</b><span class="small">Fixed outlines · logo placements</span>
+            </a>
+            <a href="../assets/logo/vidra-lockup-horizontal.svg" download>
+              <span class="thumb"><img src="../assets/logo/vidra-lockup-horizontal.svg" width="140" alt=""></span>
+              <b>Horizontal lockup</b><span class="small">The default for headers</span>
+            </a>
+            <a href="../assets/logo/vidra-lockup-stacked.svg" download>
+              <span class="thumb"><img src="../assets/logo/vidra-lockup-stacked.svg" width="72" alt=""></span>
+              <b>Stacked lockup</b><span class="small">Square placements and avatars</span>
+            </a>
+            <a href="../assets/readme/banner.svg" download>
+              <span class="thumb dark"><img src="../assets/readme/banner.svg" width="168" alt=""></span>
+              <b>README banner</b><span class="small">Repo heroes · meta repo only</span>
+            </a>
+            <a href="../assets/readme/powered-by-vidra.svg" download>
+              <span class="thumb"><img src="../assets/readme/powered-by-vidra.svg" width="132" alt=""></span>
+              <b>Powered-by badge</b><span class="small">Instance credit · README footers</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="block">
+          <p class="caption">Put the brand on a repo</p>
+          <pre>&lt;p align="center"&gt;
   &lt;img src="https://raw.githubusercontent.com/yegamble/vidra-branding/main/assets/readme/banner.svg"
-       alt="Vidra — a federated video platform you install yourself" width="100%"&gt;
+       alt="Vidra — run your own video platform" width="100%"&gt;
 &lt;/p&gt;</pre>
-    <p style="margin:0; font-size:14px; color:var(--muted);">More blocks (component-repo headers, footer credit) in <a href="../readme-snippets.md">readme-snippets.md</a>.</p>
-  </section>
+          <p class="small">Component repos get the mark, not the banner — the repo's own name leads. More blocks in <a href="../readme-snippets.md">readme-snippets.md</a>.</p>
+        </div>
 
-  <section>
-    <div class="kicker">Rules &amp; systems</div>
-    <h2>Guidelines</h2>
-    <div class="links">
-      <a href="../guidelines/brand-guidelines.md"><b>Brand guidelines</b><span>The mark, lockups, colour, typography, voice, messaging, imagery, misuse</span></a>
-      <a href="../design-system/README.md"><b>Design system</b><span>The product UI implementation layer — tokens, components, accessibility contract</span></a>
-      <a href="../identity/identity-system.md"><b>Identity system</b><span>What makes everything recognisably Vidra</span></a>
-      <a href="../governance/governance.md"><b>Governance</b><span>Change process, decision log, using the marks</span></a>
+        <div class="block">
+          <p class="caption">The rest of the system</p>
+          <div class="links">
+            <a href="../guidelines/brand-guidelines.md"><b>Brand guidelines</b><span class="small">The canonical rules this page renders — v1.1, August 2026</span></a>
+            <a href="../design-system/README.md"><b>Design system</b><span class="small">The product UI layer — tokens, components, accessibility contract</span></a>
+            <a href="../identity/identity-system.md"><b>Identity system</b><span class="small">What makes everything recognisably Vidra</span></a>
+            <a href="../governance/governance.md"><b>Governance</b><span class="small">Change process, decision log, using the marks</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <div class="in">
+    <div class="lockup-live">
+      <img src="../assets/logo/vidra-icon.svg" width="40" height="40" alt="">
+      <span class="word">Vidra</span>
+      <span class="caption">Brand guidelines</span>
     </div>
-  </section>
-</main>
+    <p class="body-2" style="max-width:640px;">Maintained in vidra-branding. Changes land by PR — one decision per PR, checked against the two boundary rules, logged in <a href="../governance/governance.md" style="color:var(--ice);">governance</a>. Assets are hot-linked from main, so merging is shipping.</p>
+    <div class="foot-row">
+      <span class="caption">Vidra brand · v1.1 · August 2026</span>
+      <span class="caption">System stack · no webfonts · no tracking</span>
+    </div>
+  </div>
+</footer>
 
-<footer>Vidra brand · v1 · August 2026 · The living design system is authored in the Claude Design project "Vidra Design System".</footer>
+<script>
+(function () {
+  "use strict";
+
+  /* ---- contents nav: scroll-spy + ground flip ---- */
+  var sections = [].slice.call(document.querySelectorAll("main section[data-ground]"));
+  var toc = document.getElementById("contents");
+  var links = {};
+  [].forEach.call(document.querySelectorAll(".toc a"), function (a) {
+    links[a.getAttribute("href").slice(1)] = a;
+  });
+
+  function activate(id) {
+    Object.keys(links).forEach(function (key) {
+      if (key === id) { links[key].setAttribute("aria-current", "true"); }
+      else { links[key].removeAttribute("aria-current"); }
+    });
+    var section = document.getElementById(id);
+    if (section && toc) { toc.setAttribute("data-ground", section.getAttribute("data-ground")); }
+  }
+
+  if ("IntersectionObserver" in window && sections.length) {
+    var visible = Object.create(null);
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { visible[entry.target.id] = entry.isIntersecting; });
+      for (var i = 0; i < sections.length; i++) {
+        if (visible[sections[i].id]) { activate(sections[i].id); return; }
+      }
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    sections.forEach(function (section) { observer.observe(section); });
+  }
+
+  /* ---- component sample tabs ---- */
+  var tablist = document.querySelector('[role="tablist"]');
+  if (tablist) {
+    var tabs = [].slice.call(tablist.querySelectorAll('[role="tab"]'));
+
+    function select(tab, focus) {
+      tabs.forEach(function (other) {
+        var selected = other === tab;
+        other.setAttribute("aria-selected", selected ? "true" : "false");
+        other.tabIndex = selected ? 0 : -1;
+        var panel = document.getElementById(other.getAttribute("aria-controls"));
+        if (panel) { panel.hidden = !selected; }
+      });
+      if (focus) { tab.focus(); }
+    }
+
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener("click", function () { select(tab, false); });
+      tab.addEventListener("keydown", function (event) {
+        var next = null;
+        if (event.key === "ArrowRight") { next = tabs[(index + 1) % tabs.length]; }
+        else if (event.key === "ArrowLeft") { next = tabs[(index - 1 + tabs.length) % tabs.length]; }
+        else if (event.key === "Home") { next = tabs[0]; }
+        else if (event.key === "End") { next = tabs[tabs.length - 1]; }
+        if (next) { event.preventDefault(); select(next, true); }
+      });
+    });
+  }
+})();
+</script>
 
 </body>
 </html>

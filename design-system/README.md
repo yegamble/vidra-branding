@@ -11,8 +11,19 @@ colour, and a navigation-layer glass material.
 | **Source of truth** | [`vidra-user/app/globals.css`](https://github.com/yegamble/vidra-user) | The tokens the product actually ships |
 | **Spec** | `vidra-user` `.ralph/specs/design-system.md` | The written contract |
 | **Reference copy** | [`tokens.css`](tokens.css) | Snapshot of the semantic token sheet, kept in this repo for brand work |
+| **Brand token sheet** | [`brand-tokens.css`](brand-tokens.css) | The other side of the boundary — brand surfaces only |
 
 Where any two disagree, **the repo wins**.
+
+## Two sheets, one boundary
+
+[`tokens.css`](tokens.css) is the **product**: systemIndigo accent, `light-dark()` values,
+glass material, the component contract. [`brand-tokens.css`](brand-tokens.css) is
+**everything outside the product** — marketing, docs, decks, README art, email — and
+carries the cyan palette, the brand type ramp, the 4px spacing scale and the 96/48 section
+rhythm from the [brand guidelines](../guidelines/brand-guidelines.md). A surface imports
+one or the other, never both: cyan never becomes an interactive colour in the app, and
+indigo never appears on a brand surface. The seam is the sign-in screen.
 
 ## Principles
 
