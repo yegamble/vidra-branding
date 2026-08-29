@@ -280,6 +280,32 @@ it must survive: being read by someone who works at the thing in column one.
 - Voice rules apply with no discount: say the number, use the real term, and every
   competitor cell is sourced from their documentation, not from memory.
 
+## 11 — Status marks
+
+Vidra publishes what is built next to what is not — the site's /scale ledger holds the
+shipped and planned columns open on purpose, because the split is the argument. This is
+how a claim carries its status (pattern codified 2026-08-29 from the site's shipped
+`StatusMark` component, its reference implementation): a Micro-level label — the one
+sanctioned all-caps register — in exactly two values, shipped and planned, each led by
+an 8px dot. Shipped fills the dot in Vidra Cyan; planned draws it hollow, a hairline
+ring in the secondary text colour.
+
+- **Two values, no third.** "In progress" is not a claim this brand makes: a thing is
+  soak-tested and shipped, or it is written down and honestly unbuilt. A roadmap that
+  needs a third state needs a shorter roadmap.
+- **The word is the signal; the dot is redundancy.** A mark whose meaning lives in the
+  colour alone fails §09, and fails in print. The dot repeats what the word already
+  says — it never replaces it.
+- **No green ticks.** The mark exists for the same reason §10 bans checkmark grids: so
+  no README, deck or changelog re-invents shipped/planned as tick-and-cross glyphs or a
+  traffic light. Wherever the distinction appears on a brand surface, this is its form.
+- **It extends the NotYet idiom from the section to the claim.** "Three things Vidra
+  does not do" states the negatives once, in one place; the status mark carries the
+  same honesty per claim, so a planned module can sit beside a shipped one without
+  borrowing its credibility.
+- The reference implementation sets the mark on Ink; a Paper surface takes the same two
+  forms in Paper tokens. The shape grammar does not change with the ground.
+
 ## Known gaps
 
 No single-colour or reversed **mark** (the logotype is single-colour by nature; the
