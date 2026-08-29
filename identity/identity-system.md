@@ -76,3 +76,4 @@ operator's brand can lead without Vidra disappearing:
 | Stacked lockup | [`assets/logo/vidra-lockup-stacked.svg`](../assets/logo/vidra-lockup-stacked.svg) | Square placements, avatars |
 | README banner | [`assets/readme/banner.svg`](../assets/readme/banner.svg) | Repo README heroes |
 | Powered-by badge | [`assets/readme/powered-by-vidra.svg`](../assets/readme/powered-by-vidra.svg) | Instance credits, README footers |
+| Social-card template | [`assets/social/og-card.mjs`](../assets/social/og-card.mjs) | The canonical 1200×630 OG card — every repo's PNG regenerates from it |

@@ -187,6 +187,11 @@ this brand.
   region that proves the point; never show full browser chrome.
 - **Video stills** from real videos on real instances, credited. Cool-toned and
   un-graded; no filters, no vignette, no cyan wash.
+- **Social cards** are generated, not drawn per surface:
+  [`assets/social/og-card.mjs`](../assets/social/og-card.mjs) rasterises the README
+  banner onto a fixed Ink 1200×630 ground (artwork inside a centred ~1120×550 safe
+  area). Every repo's OG card — vidra-site's `public/brand/og-card.png`, the docs'
+  card — regenerates from this one template.
 - **Grid**: 12 columns; 1080px max measure for text, 1280 for media; section padding
   96px desktop / 48 mobile.
 - **Spacing**: a 4px base unit. Every gap, pad and offset on a brand surface is a multiple
