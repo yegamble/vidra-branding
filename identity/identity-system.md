@@ -26,8 +26,22 @@ page, a README, a deck and the product itself recognisably belong to the same pr
    It is the only gradient in the whole identity, which is what keeps it legible as
    "federation" rather than decoration.
 7. **The glass material.** Inside the product, navigation and player chrome float on a
-   translucent glass layer above opaque content. It is the product's depth signature and
-   never appears on brand surfaces.
+   translucent glass layer above opaque content. ~~It is the product's depth signature and
+   never appears on brand surfaces.~~ **Amended 2026-08-28** — the old sentence is struck,
+   not rewritten, because it was overturned with reasons: glass is now permitted on the
+   **navigation layer only** of a brand surface (sticky header, sticky bottom bar), and
+   remains a defect in content. The rule moved because sticky chrome now travels over
+   alternating Ink and Paper grounds, where an opaque bar reads as a seam; Apple's HIG
+   puts materials on the navigation layer and nowhere else for the same reason; and the
+   product's own `.glass-chrome` rule already draws this exact line. The permission
+   carries four non-negotiable conditions, taken verbatim from the implementation that
+   earned it (vidra-site, 2026-08-28): the solid Ink ground is set unconditionally and
+   the translucent ground applies only inside `@supports (backdrop-filter: …)`;
+   `prefers-reduced-transparency: reduce` and `prefers-contrast: more` force the solid
+   ground back and drop the filter; the ground is Ink at ≥ 0.92 alpha (≥ 0.94 for a
+   bottom bar) — a contrast floor, not a taste setting; and full-bleed nav-adjacent
+   surfaces such as an open menu overlay stay solid, because once open they are content.
+   Decision recorded in the [governance log](../governance/governance.md#decision-log).
 8. **The voice.** Plain, factual, confident, precise. Numbers over adjectives, "you"
    over "we", no emoji anywhere.
 

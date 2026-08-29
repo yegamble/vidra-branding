@@ -179,6 +179,12 @@ this brand.
 - **Rhythm**: long scroll, alternating Ink and Paper sections — never two Ink sections
   in a row.
 - **Whitespace**: if a section feels empty, cut a sentence rather than adding a card.
+- **Materials** (2026-08-28): brand surfaces are flat, with one exception — sticky
+  navigation chrome may be glass (blurred, translucent Ink) under the conditions in
+  [identity §7](../identity/identity-system.md#the-recognisable-elements): unconditional
+  solid Ink fallback, translucency only inside `@supports (backdrop-filter: …)`,
+  `prefers-reduced-transparency` and `prefers-contrast: more` force solid, Ink at
+  ≥ 0.92 alpha (≥ 0.94 for a bottom bar). Glass in a content section is a defect.
 
 ## 08 — Misuse
 
