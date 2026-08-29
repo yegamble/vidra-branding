@@ -1,8 +1,12 @@
 # Vidra brand guidelines
 
-**v1.2 · August 2026.** Vidra is a video platform you install yourself. These are the rules
+**v1.3 · August 2026.** Vidra is a video platform you install yourself. These are the rules
 for how it looks and speaks everywhere **outside the product interface**. (Inside the
 product, the [design system](../design-system/README.md) governs.)
+
+*New in v1.3 (2026-08-29): the status-mark pattern (§11) — the shipped/planned
+vocabulary, upstreamed from vidra-site's /scale ledger. Logged in the
+[decision log](../governance/governance.md#decision-log).*
 
 *New in v1.2 (2026-08-28, upstreamed from the vidra-site design audit): navigation-layer
 glass admitted on brand surfaces ([identity §7](../identity/identity-system.md), §07

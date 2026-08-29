@@ -19,7 +19,7 @@ undecided.
 2. **Check the boundary** — any colour change is tested against the two boundary rules
    (cyan never interactive in-app; indigo never on a brand surface). Any in-product
    token change belongs in `vidra-user`, not here, and axe is the authority there.
-3. **Version** — guidelines carry a version and date (currently **v1.2 · August 2026**).
+3. **Version** — guidelines carry a version and date (currently **v1.3 · August 2026**).
    Breaking visual changes (mark, palette, lockups) bump the version; copy edits do not.
 4. **Propagate** — assets are hot-linked from `main`, so merging is shipping. Renaming
    or moving an asset file is a breaking change: grep the org's READMEs first.
