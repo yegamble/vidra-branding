@@ -222,6 +222,16 @@ product is checked against the same numbers at review.
   change alone, is a defect.
 - **Motion.** Transitions run 150ms for fills and 200ms for lifts and never exceed 300ms.
   Everything honours `prefers-reduced-motion`, including scroll behaviour.
+
+  **The ambient exception (2026-08-28).** An infinite ambient animation may ship only
+  with a written argument — recorded where the animation lives — for why a ≤ 300ms
+  one-shot cannot say the same thing. Two exist, both on vidra-site: `vd-pulse`, a 2.4s
+  opacity loop on the hero version dot (its whole message is "this release is current"),
+  and `vd-dash`, a 1.1s travelling dash on the federation figure's live wires (direction
+  of flow, which a static dashed line cannot express). Both are ambient, carry no
+  information that is not also in adjacent text, and **stop dead under
+  `prefers-reduced-motion`** — as must any successor. A third instance needs its
+  paragraph written first.
 - **Never colour alone.** A state carries a glyph or a word as well as a colour. The
   do/don't badges in the interactive edition are drawn check and cross vectors, not
   colour swaps and not dingbat characters.
