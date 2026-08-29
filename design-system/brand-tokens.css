@@ -3,7 +3,7 @@
  * The product interface does NOT read this file: it ships tokens.css with the
  * systemIndigo accent, and the two never mix — cyan never becomes an interactive
  * colour in the app, indigo never appears on a brand surface.
- * Rules: ../guidelines/brand-guidelines.md (v1.1). Rendered: ../portal/index.html. */
+ * Rules: ../guidelines/brand-guidelines.md (v1.2). Rendered: ../portal/index.html. */
 
 :root {
   /* palette — guidelines §03. Cyan token names follow the palette's proper

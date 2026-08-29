@@ -1,8 +1,16 @@
 # Vidra brand guidelines
 
-**v1.1 · August 2026.** Vidra is a video platform you install yourself. These are the rules
+**v1.2 · August 2026.** Vidra is a video platform you install yourself. These are the rules
 for how it looks and speaks everywhere **outside the product interface**. (Inside the
 product, the [design system](../design-system/README.md) governs.)
+
+*New in v1.2 (2026-08-28, upstreamed from the vidra-site design audit): navigation-layer
+glass admitted on brand surfaces ([identity §7](../identity/identity-system.md), §07
+here), a nine-level type ramp in rem (§04), tabular figures as the number voice (§04),
+the ambient motion exception (§09), the comparison-surface pattern (§10), reconciled
+[brand tokens](../design-system/brand-tokens.css), and the canonical social-card
+template (§07, [`assets/social/`](../assets/social/README.md)). Each change is a row in
+the [decision log](../governance/governance.md#decision-log).*
 
 *New in v1.1: a Foundation section (§00), Mist `#EEF7FB` in the palette, an explicit
 spacing scale in §07, an Accessibility section (§09), and an interactive edition of this
