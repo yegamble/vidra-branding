@@ -6,10 +6,12 @@
  * Rules: ../guidelines/brand-guidelines.md (v1.1). Rendered: ../portal/index.html. */
 
 :root {
-  /* palette — guidelines §03 */
-  --brand-cyan: #22BDE3;         /* the brand colour; fills, rules, large type on Ink */
-  --brand-cyan-deep: #16A3E2;    /* secondary fill; the mark's own shadow tone */
-  --brand-cyan-action: #0B7EA3;  /* the only cyan under white text — 4.6:1 */
+  /* palette — guidelines §03. Cyan token names follow the palette's proper
+   * names (Vidra Cyan, Deep Cyan, Action Cyan) since 2026-08-28; the old
+   * names were --brand-cyan / --brand-cyan-deep / --brand-cyan-action. */
+  --brand-vidra-cyan: #22BDE3;   /* the brand colour; fills, rules, large type on Ink */
+  --brand-deep-cyan: #16A3E2;    /* secondary fill; the mark's own shadow tone */
+  --brand-action-cyan: #0B7EA3;  /* the only cyan under white text — 4.6:1 */
   --brand-ice: #CBF2F4;          /* saturated tint — charts, brand moments */
   --brand-mist: #EEF7FB;         /* quiet tint — cards and section grounds on Paper */
   --brand-ink: #0C2136;
@@ -22,8 +24,27 @@
   --brand-label: #5C7285;            /* 11–13px labels on Paper — 4.6:1 */
   --brand-on-ink: #E6F6FA;           /* body text on Ink — 14.7:1 */
   --brand-on-ink-2: #8FB4C9;         /* secondary text on Ink — 7.4:1 */
-  --brand-hairline: #E2E6E9;         /* hairline on Paper */
-  --brand-hairline-ink: rgb(29 70 106 / .90);
+  /* hairlines — alpha since 2026-08-28, so one token composites correctly on
+   * Paper (≈ #D9DCE0) and on a white card alike; the opaque #E2E6E9 only
+   * worked on Paper. Ink's hairline dropped from .90 (a solid Slate border in
+   * all but name) to the .60 the site shipped and measured. */
+  --brand-hairline: rgb(12 33 54 / 0.12);     /* hairline on Paper and white */
+  --brand-hairline-ink: rgb(29 70 106 / 0.6); /* hairline on Ink */
+
+  /* surfaces on Ink — adopted from vidra-site 2026-08-28. Slate or Ink at a
+   * named alpha, so a value copied ten times cannot drift. */
+  --brand-ink-surface: rgb(29 70 106 / 0.32); /* raised panel on Ink; composites ≈ #122E48 */
+  --brand-ink-chip: rgb(12 33 54 / 0.6);      /* recessed pill on an already-raised surface */
+  --brand-vidra-tint: rgb(34 189 227 / 0.14); /* selected state of a control, cyan at 0.14 */
+
+  /* navigation-layer glass — the only sanctioned translucency on a brand
+   * surface (identity §7, amended 2026-08-28). Solid Ink is the unconditional
+   * ground; these apply only inside @supports (backdrop-filter: …), and
+   * prefers-reduced-transparency / prefers-contrast force solid again.
+   * The alphas are contrast floors, not taste settings. */
+  --brand-chrome-ink: rgb(12 33 54 / 0.92);     /* sticky header */
+  --brand-chrome-ink-bar: rgb(12 33 54 / 0.94); /* sticky bottom bar */
+  --brand-chrome-blur: saturate(160%) blur(14px);
 
   /* type — the system stack, same as the product; nothing licensed, nothing downloads */
   --brand-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
@@ -82,7 +103,7 @@
   --brand-ease: cubic-bezier(.32, .72, 0, 1);
 
   /* focus — 2px ring, 2px offset, on every interactive element */
-  --brand-focus-paper: var(--brand-cyan-action);
+  --brand-focus-paper: var(--brand-action-cyan);
   --brand-focus-ink: var(--brand-ice);
 }
 
