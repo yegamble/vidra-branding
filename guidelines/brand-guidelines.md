@@ -236,6 +236,31 @@ product is checked against the same numbers at review.
   do/don't badges in the interactive edition are drawn check and cross vectors, not
   colour swaps and not dingbat characters.
 
+## 10 — Comparison surfaces
+
+Vidra positions itself against alternatives, so comparisons will keep being made — in
+tables, decks, READMEs. This is how the brand makes one (pattern codified 2026-08-28
+from the site's shipped `Comparison` component, its reference implementation). The test
+it must survive: being read by someone who works at the thing in column one.
+
+- **Columns of checkable prose.** Every cell is a sentence the reader can verify or an
+  admission that it varies ("Varies by project. Check the one you are comparing.").
+  **No ticks, no crosses, no scores, no ratings** — the reader can do the arithmetic,
+  and a checkmark grid is the competitor-page cliché this brand does not make.
+- **Admissions of parity and concessions stay in.** Where Vidra matches the other
+  self-hosted options, the table says so rather than inventing a difference; where an
+  alternative is ahead, the cell says that too. The concessions are what make the rest
+  of the table believable.
+- **Emphasis, never colour alone.** The Vidra column is marked three ways at once:
+  heading in Vidra Cyan, a quiet fill behind the column, and last position. The other
+  columns are not marked down — secondary text, not strikeouts.
+- **Competitor columns carry a visible verification date**, in the surface itself, not
+  a footnote page: "PeerTube column checked against PeerTube's own documentation,
+  v8.2.4, August 2026." A comparison without a date is a claim about the past wearing
+  present tense.
+- Voice rules apply with no discount: say the number, use the real term, and every
+  competitor cell is sourced from their documentation, not from memory.
+
 ## Known gaps
 
 No single-colour or reversed **mark** (the logotype is single-colour by nature; the
