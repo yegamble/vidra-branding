@@ -119,6 +119,12 @@ on small screens** — never px — so the reader's own font-size setting scales
   like a press release; all caps is reserved for 11px micro-labels.
 - **Two weights** — regular for reading, bold for headings. Semibold exists for 13–15px
   labels. Light and black are not part of the brand.
+- **Numbers speak in tabular figures** (2026-08-28). The brand says the number, so the
+  number gets a consistent voice: any figure that *is* the datum — a stat, a price, a
+  count, a calculator result — sets `font-variant-numeric: tabular-nums` in whichever
+  level it occupies, so columns align and a changing value does not shimmy. Commands,
+  CIDs and stream keys stay in the system mono, whose figures are tabular by nature.
+  This is the whole answer to the custom-mono trend: the signal at zero bytes.
 
 ## 05 — Voice
 
