@@ -29,12 +29,25 @@
   --brand-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   --brand-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* scale — guidelines §04 */
-  --brand-size-hero: 64px;       --brand-lh-hero: 64px;       --brand-track-hero: -.05em;
-  --brand-size-section: 44px;    --brand-lh-section: 48px;    --brand-track-section: -.04em;
-  --brand-size-standfirst: 22px; --brand-lh-standfirst: 31px;
-  --brand-size-body: 17px;       --brand-lh-body: 26px;
-  --brand-size-mono: 14px;
+  /* scale — guidelines §04. Nine levels, absorbed from vidra-site 2026-08-28.
+   * rem (and clamp for the display levels) rather than px, so the reader's own
+   * font-size setting scales every brand surface; the px in each comment is the
+   * size at 16px root, full width. */
+  --brand-size-hero: clamp(2.375rem, 7.4vw, 4rem);           /* 64px */
+  --brand-lh-hero: 1;            --brand-track-hero: -.05em;
+  --brand-size-section: clamp(1.875rem, 4.6vw, 2.75rem);     /* 44px */
+  --brand-lh-section: 1.09;      --brand-track-section: -.04em;
+  --brand-size-sub: clamp(1.25rem, 2.4vw, 1.5rem);           /* 24px */
+  --brand-lh-sub: 1.25;          --brand-track-sub: -.025em;
+  --brand-size-card: 1.25rem;                                /* 20px */
+  --brand-lh-card: 1.4;          --brand-track-card: -.02em;
+  --brand-size-standfirst: clamp(1.125rem, 2.1vw, 1.375rem); /* 22px */
+  --brand-lh-standfirst: 1.41;
+  --brand-size-body: 1.0625rem;  --brand-lh-body: 1.53;      /* 17px */
+  --brand-size-small: 0.9375rem; --brand-lh-small: 1.5;      /* 15px */
+  --brand-size-mono: 0.875rem;   --brand-lh-mono: 1.7;       /* 14px */
+  --brand-size-micro: 0.6875rem; --brand-lh-micro: 1.4;      /* 11px, all caps, 700 */
+  --brand-track-micro: .14em;
   --brand-track-wordmark: -.045em; /* live "Vidra" in inline and UI text, 700 */
 
   /* spacing — 4px base, guidelines §07 */

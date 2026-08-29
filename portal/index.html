@@ -290,9 +290,13 @@ figure { margin:0; display:flex; flex-direction:column; gap:var(--s3); }
 .spec-row:first-child { border-top:0; }
 .t-hero { font-size:64px; line-height:64px; font-weight:700; letter-spacing:-.05em; }
 .t-sec { font-size:44px; line-height:48px; font-weight:700; letter-spacing:-.04em; }
+.t-sub { font-size:24px; line-height:30px; font-weight:700; letter-spacing:-.025em; }
+.t-card { font-size:20px; line-height:28px; font-weight:700; letter-spacing:-.02em; }
 .t-stand { font-size:22px; line-height:31px; font-weight:400; }
 .t-body { font-size:17px; line-height:26px; font-weight:400; }
+.t-sm { font-size:15px; line-height:22px; font-weight:400; }
 .t-mono { font-family:var(--mono); font-size:14px; line-height:22px; }
+.t-micro { font-size:11px; line-height:15px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
 
 /* ---------- code ---------- */
 pre {
@@ -802,6 +806,20 @@ footer .foot-row { display:flex; flex-wrap:wrap; gap:var(--s6); justify-content:
             </div>
             <div class="spec-row">
               <div>
+                <p class="caption">Sub</p>
+                <p class="small">24 / 30 · 700 · −0.025em</p>
+              </div>
+              <p class="t-sub">A heading inside a section</p>
+            </div>
+            <div class="spec-row">
+              <div>
+                <p class="caption">Card title</p>
+                <p class="small">20 / 28 · 700 · −0.02em</p>
+              </div>
+              <p class="t-card">One card, one claim</p>
+            </div>
+            <div class="spec-row">
+              <div>
                 <p class="caption">Standfirst</p>
                 <p class="small">22 / 31 · 400</p>
               </div>
@@ -816,12 +834,27 @@ footer .foot-row { display:flex; flex-wrap:wrap; gap:var(--s6); justify-content:
             </div>
             <div class="spec-row">
               <div>
+                <p class="caption">Small</p>
+                <p class="small">15 / 22 · 400 · semibold for labels</p>
+              </div>
+              <p class="t-sm" style="max-width:66ch;">Captions and dense rows — the level between body and mono.</p>
+            </div>
+            <div class="spec-row">
+              <div>
                 <p class="caption">Mono</p>
                 <p class="small">14 · commands, CIDs, stream keys</p>
               </div>
               <p class="t-mono">vidra instance status --json</p>
             </div>
+            <div class="spec-row">
+              <div>
+                <p class="caption">Micro</p>
+                <p class="small">11 / 15 · 700 · +0.14em · the only all caps</p>
+              </div>
+              <p class="t-micro">Federation on by default</p>
+            </div>
           </div>
+          <p class="body-2" style="margin-top:var(--s4);">Nine levels since 2026-08-28, set in rem and clamped down on small screens — the reader's own font-size setting scales every brand surface.</p>
         </div>
       </div>
     </section>

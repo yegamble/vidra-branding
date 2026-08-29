@@ -98,13 +98,22 @@ One face, tighter as it gets bigger. The brand uses the same system stack as the
 marketing page and the app are set in the same face. Nothing is licensed, nothing
 downloads.
 
+Nine levels (extended from five on 2026-08-28, absorbing the ramp vidra-site proved in
+production). Sizes are the full-width px; the tokens in
+[`brand-tokens.css`](../design-system/brand-tokens.css) set them in **rem, clamped down
+on small screens** — never px — so the reader's own font-size setting scales the page.
+
 | Level | Spec |
 |-------|------|
-| Hero | 64 / 64 · 700 · −0.05em |
-| Section head | 44 / 48 · 700 · −0.04em |
-| Standfirst | 22 / 31 · 400 — one or two lines under a headline, never three |
-| Body | 17 / 26 · 400 — 66-character measure |
-| Mono | 14 — commands, CIDs, stream keys |
+| Hero | 64 / 1 · 700 · −0.05em — clamps to 38 on a phone |
+| Section head | 44 / 1.09 · 700 · −0.04em |
+| Sub | 24 / 1.25 · 700 · −0.025em — a heading inside a section |
+| Card title | 20 / 1.4 · 700 · −0.02em |
+| Standfirst | 22 / 1.41 · 400 — one or two lines under a headline, never three |
+| Body | 17 / 1.53 · 400 — 66-character measure |
+| Small | 15 / 1.5 · 400 — captions, dense rows; semibold for labels |
+| Mono | 14 / 1.7 — commands, CIDs, stream keys |
+| Micro | 11 / 1.4 · 700 · +0.14em, all caps — the only place all caps is allowed |
 
 - **Sentence case, always** — headlines, buttons, nav, section labels. Title Case reads
   like a press release; all caps is reserved for 11px micro-labels.
