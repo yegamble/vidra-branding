@@ -1,6 +1,6 @@
 # Vidra brand and marketing guidelines
 
-Version 2.0 · 29 October 2026
+Version 2.1 · 29 October 2026
 
 The reference approved on 29 October 2026 establishes Vidra’s new marketing identity: warm paper, deep navy, a black V/play mark, and a quiet launch page. This replaces the cyan/otter marketing identity and its long technical homepage. The product interface remains governed by `design-system/tokens.css`; this change does not recolor the application.
 
@@ -37,6 +37,7 @@ Use black on Paper. For repository READMEs, use `assets/readme/logo.svg`: its fi
 | `--brand-line` | `#B9B3AF` | Decorative construction lines only |
 | `--brand-surface` | `#E5D9CE` | Illustration surfaces |
 | `--brand-slate` | `#747E90` | Illustration mountain layers |
+| `--brand-signal` | `#F4B942` | Decorative data wires, packets, node edges and player receipt |
 
 Use `design-system/brand-tokens.css`; the marketing site copies it into `app/brand.css`. Component colors reference tokens. Navy is a dark neutral, not the product’s indigo accent. Cyan is retired from marketing. Do not add indigo, bright accent gradients, or automatic dark-mode recoloring. Decorative low-contrast lines must never carry essential information.
 
@@ -60,6 +61,8 @@ Sentence case throughout. Uppercase is reserved for the status micro-label. Use 
 A single launch composition: header with logo at left and status at right; headline and action at left; one isometric streaming illustration at right; legal/contact footer. Use generous empty space and a continuous Paper ground. No feature grids, comparison tables, install commands, architecture explorers, demo gallery, extra marketing navigation, or sticky install bar in this launch treatment.
 
 At narrow widths, stack copy, action, then artwork. Let the page scroll naturally. The illustration must not force horizontal scrolling. Footer items stack on phones. Keep header logo and status visible without a menu.
+
+Signal Yellow is a decorative illustration accent only; it does not become a button, body-text or status color. The maintainer’s 29 October animation amendment allows gentle floating and glowing packets moving along wires toward the player. Reduced motion leaves the wires and tag visible but still. The atproto tag uses the current official `at://` header mark with an adjacent lowercase protocol label; it does not claim that video bytes travel over AT Protocol.
 
 The illustration is conceptual artwork: translucent cream planes, navy player, quiet mountain thumbnails, and sparse dashed construction lines. It is not evidence of a shipping interface. Mark it decorative in HTML; do not expose fictional playback controls as buttons. Real product captures, if added later, need source and capture date. No stock photography, emoji, mascot, or unrelated ornamental scene.
 
