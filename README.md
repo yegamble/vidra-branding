@@ -11,4 +11,4 @@ The canonical marketing identity for Vidra: warm Paper, Navy, and a black V/play
 - [Product design system](design-system/README.md)
 - [README snippets](readme-snippets.md)
 
-Version 2.0, 29 October 2026, replaces the cyan/otter marketing system. Product interface tokens remain separate. Assets use fixed colors; the README logo includes a Paper tile for light and dark viewers.
+Version 2.1, 29 October 2026, replaces the cyan/otter marketing system. Product interface tokens remain separate. Assets use fixed colors; the README logo includes a Paper tile for light and dark viewers.

@@ -73,3 +73,7 @@ the marks are not part of that grant.
 The maintainer requested the supplied warm-paper/navy coming-soon design, retirement of the extra marketing pages, updated README logos, and Figma guidelines. Version 2 replaces the otter/cyan marketing identity, long technical hero, multi-band rhythm, and former marketing imagery rules. Product tokens remain separate. Existing README asset URLs are retained so consumers receive the new artwork without changing pinned application checkouts. The icon and README tile have fixed Paper grounds for appearance-independent contrast.
 
 The new site’s waitlist action is a prefilled email request to support, not a claim of server-side registration. The conceptual streaming scene is decorative, not a product screenshot. Figma: https://www.figma.com/design/3UVHlVHh4MXHoBUdufD2n7.
+
+## 2026-10-29 — Signal Yellow illustration amendment
+
+The maintainer requested glowing yellow network wires with moving data packets, continued floating motion, and an atproto tag. Signal Yellow `#F4B942` is reserved for decorative illustration wires, packets, node edges and player receipt; marketing actions and copy retain Navy. Reduced motion freezes the whole scene. The protocol tag references atproto’s current official `at://` header mark; the artwork does not assert a protocol-level video transport mechanism. Canonical guidelines v2.1, shared tokens, site projection and Figma palette are updated together.
