@@ -17,13 +17,9 @@ Where any two disagree, **the repo wins**.
 
 ## Two sheets, one boundary
 
-[`tokens.css`](tokens.css) is the **product**: systemIndigo accent, `light-dark()` values,
-glass material, the component contract. [`brand-tokens.css`](brand-tokens.css) is
-**everything outside the product** — marketing, docs, decks, README art, email — and
-carries the cyan palette, the brand type ramp, the 4px spacing scale and the 96/48 section
-rhythm from the [brand guidelines](../guidelines/brand-guidelines.md). A surface imports
-one or the other, never both: cyan never becomes an interactive colour in the app, and
-indigo never appears on a brand surface. The seam is the sign-in screen.
+[`tokens.css`](tokens.css) remains the **product** reference: systemIndigo, semantic surfaces, and navigation glass. [`brand-tokens.css`](brand-tokens.css) is the v2 **marketing** sheet: warm Paper, Navy, black logo, and muted body text. The former cyan marketing palette is retired. The product UI is not recolored by this change. See the [v2 guidelines](../guidelines/brand-guidelines.md) and [editable Figma](https://www.figma.com/design/3UVHlVHh4MXHoBUdufD2n7).
+
+The principles and component inventory below describe the product, not the coming-soon marketing layout.
 
 ## Principles
 

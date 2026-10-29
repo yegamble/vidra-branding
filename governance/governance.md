@@ -67,3 +67,9 @@ the marks are not part of that grant.
 - [ ] Sentence case; two weights; no emoji; numbers over adjectives
 - [ ] Text contrast clears WCAG AA (Action Cyan — never Vidra Cyan — under white text)
 - [ ] No gradients; no stock photography; screens shown honestly
+
+## 2026-10-29 — Marketing identity v2
+
+The maintainer requested the supplied warm-paper/navy coming-soon design, retirement of the extra marketing pages, updated README logos, and Figma guidelines. Version 2 replaces the otter/cyan marketing identity, long technical hero, multi-band rhythm, and former marketing imagery rules. Product tokens remain separate. Existing README asset URLs are retained so consumers receive the new artwork without changing pinned application checkouts. The icon and README tile have fixed Paper grounds for appearance-independent contrast.
+
+The new site’s waitlist action is a prefilled email request to support, not a claim of server-side registration. The conceptual streaming scene is decorative, not a product screenshot. Figma: https://www.figma.com/design/3UVHlVHh4MXHoBUdufD2n7.

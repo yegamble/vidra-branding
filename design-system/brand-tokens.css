@@ -1,116 +1,15 @@
-/* Vidra brand tokens — brand surfaces only.
- * Marketing pages, documentation sites, decks, README art, transactional email.
- * The product interface does NOT read this file: it ships tokens.css with the
- * systemIndigo accent, and the two never mix — cyan never becomes an interactive
- * colour in the app, indigo never appears on a brand surface.
- * Rules: ../guidelines/brand-guidelines.md (v1.3). Rendered: ../portal/index.html. */
-
+/* Vidra marketing v2 — canonical copy of vidra-branding/design-system/brand-tokens.css. */
 :root {
-  /* palette — guidelines §03. Cyan token names follow the palette's proper
-   * names (Vidra Cyan, Deep Cyan, Action Cyan) since 2026-08-28; the old
-   * names were --brand-cyan / --brand-cyan-deep / --brand-cyan-action. */
-  --brand-vidra-cyan: #22BDE3;   /* the brand colour; fills, rules, large type on Ink */
-  --brand-deep-cyan: #16A3E2;    /* secondary fill; the mark's own shadow tone */
-  --brand-action-cyan: #0B7EA3;  /* the only cyan under white text — 4.6:1 */
-  --brand-ice: #CBF2F4;          /* saturated tint — charts, brand moments */
-  --brand-mist: #EEF7FB;         /* quiet tint — cards and section grounds on Paper */
-  --brand-ink: #0C2136;
-  --brand-slate: #1D466A;        /* dividers and depth on Ink; never body text on Paper */
-  --brand-muted: #4C6478;        /* secondary text on Paper — 5.7:1 */
-  --brand-paper: #F5F5F7;        /* shared with the product canvas */
-
-  /* text tints, each measured against its ground — guidelines §09 */
-  --brand-cyan-action-text: #0A6B8C; /* small cyan type on Paper — 5.5:1 */
-  --brand-label: #5C7285;            /* 11–13px labels on Paper — 4.6:1 */
-  --brand-on-ink: #E6F6FA;           /* body text on Ink — 14.7:1 */
-  --brand-on-ink-2: #8FB4C9;         /* secondary text on Ink — 7.4:1 */
-  /* hairlines — alpha since 2026-08-28, so one token composites correctly on
-   * Paper (≈ #D9DCE0) and on a white card alike; the opaque #E2E6E9 only
-   * worked on Paper. Ink's hairline dropped from .90 (a solid Slate border in
-   * all but name) to the .60 the site shipped and measured. */
-  --brand-hairline: rgb(12 33 54 / 0.12);     /* hairline on Paper and white */
-  --brand-hairline-ink: rgb(29 70 106 / 0.6); /* hairline on Ink */
-
-  /* surfaces on Ink — adopted from vidra-site 2026-08-28. Slate or Ink at a
-   * named alpha, so a value copied ten times cannot drift. */
-  --brand-ink-surface: rgb(29 70 106 / 0.32); /* raised panel on Ink; composites ≈ #122E48 */
-  --brand-ink-chip: rgb(12 33 54 / 0.6);      /* recessed pill on an already-raised surface */
-  --brand-vidra-tint: rgb(34 189 227 / 0.14); /* selected state of a control, cyan at 0.14 */
-
-  /* navigation-layer glass — the only sanctioned translucency on a brand
-   * surface (identity §7, amended 2026-08-28). Solid Ink is the unconditional
-   * ground; these apply only inside @supports (backdrop-filter: …), and
-   * prefers-reduced-transparency / prefers-contrast force solid again.
-   * The alphas are contrast floors, not taste settings. */
-  --brand-chrome-ink: rgb(12 33 54 / 0.92);     /* sticky header */
-  --brand-chrome-ink-bar: rgb(12 33 54 / 0.94); /* sticky bottom bar */
-  --brand-chrome-blur: saturate(160%) blur(14px);
-
-  /* type — the system stack, same as the product; nothing licensed, nothing downloads */
-  --brand-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --brand-paper: #f1e8df;
+  --brand-ink: #0d1b3b;
+  --brand-black: #080808;
+  --brand-muted: #666361;
+  --brand-white: #fffaf4;
+  --brand-line: #b9b3af;
+  --brand-surface: #e5d9ce;
+  --brand-slate: #747e90;
+  --brand-shadow: rgb(70 49 33 / 0.12);
+  --brand-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --brand-font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-
-  /* scale — guidelines §04. Nine levels, absorbed from vidra-site 2026-08-28.
-   * rem (and clamp for the display levels) rather than px, so the reader's own
-   * font-size setting scales every brand surface; the px in each comment is the
-   * size at 16px root, full width. */
-  --brand-size-hero: clamp(2.375rem, 7.4vw, 4rem);           /* 64px */
-  --brand-lh-hero: 1;            --brand-track-hero: -.05em;
-  --brand-size-section: clamp(1.875rem, 4.6vw, 2.75rem);     /* 44px */
-  --brand-lh-section: 1.09;      --brand-track-section: -.04em;
-  --brand-size-sub: clamp(1.25rem, 2.4vw, 1.5rem);           /* 24px */
-  --brand-lh-sub: 1.25;          --brand-track-sub: -.025em;
-  --brand-size-card: 1.25rem;                                /* 20px */
-  --brand-lh-card: 1.4;          --brand-track-card: -.02em;
-  --brand-size-standfirst: clamp(1.125rem, 2.1vw, 1.375rem); /* 22px */
-  --brand-lh-standfirst: 1.41;
-  --brand-size-body: 1.0625rem;  --brand-lh-body: 1.53;      /* 17px */
-  --brand-size-small: 0.9375rem; --brand-lh-small: 1.5;      /* 15px */
-  --brand-size-mono: 0.875rem;   --brand-lh-mono: 1.7;       /* 14px */
-  --brand-size-micro: 0.6875rem; --brand-lh-micro: 1.4;      /* 11px, all caps, 700 */
-  --brand-track-micro: .14em;
-  --brand-track-wordmark: -.045em; /* live "Vidra" in inline and UI text, 700 */
-
-  /* spacing — 4px base, guidelines §07 */
-  --brand-space-1: 4px;
-  --brand-space-2: 8px;
-  --brand-space-3: 12px;
-  --brand-space-4: 16px;
-  --brand-space-6: 24px;
-  --brand-space-8: 32px;
-  --brand-space-12: 48px;
-  --brand-space-24: 96px;
-
-  /* layout — guidelines §07 */
-  --brand-section-pad: 96px;
-  --brand-section-pad-mobile: 48px;
-  --brand-measure-text: 1080px;
-  --brand-measure-media: 1280px;
-  --brand-columns: 12;
-
-  /* radii — concentric, matching the product's scale */
-  --brand-r-btn: 10px;
-  --brand-r-input: 12px;
-  --brand-r-card: 16px;
-  --brand-r-dialog: 20px;
-  --brand-r-sheet: 22px;
-  --brand-r-pill: 999px;
-
-  /* motion — guidelines §09; never longer than --brand-dur-max */
-  --brand-dur-fill: 150ms;
-  --brand-dur-lift: 200ms;
-  --brand-dur-max: 300ms;
-  --brand-ease: cubic-bezier(.32, .72, 0, 1);
-
-  /* focus — 2px ring, 2px offset, on every interactive element */
-  --brand-focus-paper: var(--brand-action-cyan);
-  --brand-focus-ink: var(--brand-ice);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --brand-dur-fill: 1ms;
-    --brand-dur-lift: 1ms;
-    --brand-dur-max: 1ms;
-  }
+  --brand-measure: 90rem;
 }

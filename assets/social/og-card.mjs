@@ -1,7 +1,7 @@
 /**
  * The canonical Vidra social card — one template for every surface.
  *
- * Rasterises the README banner, centred on an Ink 1200×630 ground, to a PNG.
+ * Rasterises the README banner, centred on an Paper 1200×630 ground, to a PNG.
  * Crawlers that matter (X, Slack, older LinkedIn) drop SVG cards, so each
  * consuming repo commits the PNG and regenerates it from here whenever the
  * banner changes: vidra-site's `public/brand/og-card.png` and the docs' social
@@ -9,8 +9,8 @@
  * stays inside a centred ~1120×550 safe area for crop tolerance.
  *
  * The banner must not carry a `prefers-color-scheme` switch — the lockup
- * failure class: an asset that flips with the OS mode renders Ink-on-Ink when
- * rasterised onto a fixed Ink ground. The check below is mechanical and fails
+ * failure class: an asset that flips with the OS mode renders unreadable artwork when
+ * rasterised onto a fixed Paper ground. The check below is mechanical and fails
  * the run; if the banner ever grows a switch, render a fixed-ground variant
  * instead. Never let the rasteriser pick a mode.
  *
@@ -37,8 +37,8 @@ const banner = resolve(process.argv[3] ?? resolve(here, "../readme/banner.svg"))
 const svg = readFileSync(banner, "utf8");
 if (svg.includes("prefers-color-scheme")) {
   console.error(
-    `${banner} carries a prefers-color-scheme switch. On the card's fixed Ink ` +
-      "ground that renders Ink-on-Ink in one mode. Render a fixed-ground " +
+    `${banner} carries a prefers-color-scheme switch. On the card's fixed Paper ` +
+      "ground that renders unreadable artwork in one mode. Render a fixed-ground " +
       "variant of the artwork instead — never let the rasteriser pick a mode.",
   );
   process.exit(1);
@@ -67,7 +67,7 @@ async function loadChromium() {
 
 const html = `<!doctype html>
 <html><head><style>
-  html, body { margin: 0; width: 1200px; height: 630px; background: #0c2136; }
+  html, body { margin: 0; width: 1200px; height: 630px; background: #f1e8df; }
   body { display: flex; align-items: center; justify-content: center; }
   svg { width: 1120px; height: auto; }
 </style></head><body>${svg}</body></html>`;
